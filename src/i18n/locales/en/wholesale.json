@@ -1,0 +1,25 @@
+{
+  "guide": {
+    "eyebrow": "Wholesale Guide",
+    "title": "Guide to Ordering Korean Cosmetics Wholesale",
+    "subtitle": "A simple 5-step guide to ordering authentic Korean cosmetics wholesale at the best prices.",
+    "steps": {
+      "1": { "title": "Step 1: Choose Products", "desc": "Browse the product catalog on our website. You can search by name, filter by category, brand, or minimum order quantity (MOQ). Select products that fit your customer base." },
+      "2": { "title": "Step 2: Request a Quote", "desc": "Fill out the wholesale quote request form on our website or contact us directly via Zalo. Provide product names, estimated quantities, and your contact information." },
+      "3": { "title": "Step 3: Receive Detailed Quote", "desc": "Within 24 business hours, we will send a detailed wholesale quote including unit prices by quantity, discounts, and shipping information." },
+      "4": { "title": "Step 4: Confirm & Ship", "desc": "After agreeing on the quote, confirm the final quantity. We will package to standard and arrange shipping to your address." },
+      "5": { "title": "Step 5: Order Complete", "desc": "Receive goods, check quantity and quality. Start your Korean cosmetics business with competitive wholesale pricing." }
+    },
+    "policiesTitle": "Wholesale Policies",
+    "policies": {
+      "moq": { "title": "Minimum Order Quantity (MOQ)", "desc": "Flexible MOQ from 10-48 units depending on product, suitable for starting a business." },
+      "discount": { "title": "Volume Discounts", "desc": "Wholesale discounts increase with order volume — the more you order, the better the price." },
+      "warranty": { "title": "Authentic Guarantee", "desc": "All products are 100% authentic with full origin certification." },
+      "support": { "title": "After-Sales Support", "desc": "Product consultation, marketing images, and materials for wholesale customers." }
+    },
+    "ctaTitle": "Ready to order wholesale?",
+    "ctaSubtitle": "Send a quote request today to get the best wholesale price for your business.",
+    "ctaButton": "Send Quote Request",
+    "ctaViewProducts": "View Products"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "brandName": "K-뷰티",
+  "brandSuffix": "도매",
+  "languageSelector": "언어 선택",
+  "search": "검색",
+  "searchPlaceholder": "상품, 브랜드 검색...",
+  "menu": {
+    "open": "메뉴 열기",
+    "close": "닫기",
+    "products": "상품",
+    "categories": "카테고리",
+    "newArrivals": "신상품",
+    "bestSellers": "베스트셀러",
+    "wholesaleGuide": "도매 안내",
+    "contact": "문의",
+    "allProducts": "전체 상품"
+  },
+  "actions": {
+    "viewProducts": "상품 보기",
+    "contactZalo": "Zalo로 도매 문의",
+    "requestQuote": "견적 요청",
+    "viewDetails": "상세 보기",
+    "viewAll": "전체 보기",
+    "loadMore": "더 보기",
+    "send": "전송",
+    "reset": "초기화",
+    "close": "닫기",
+    "clearFilters": "필터 초기화",
+    "newRequest": "새 요청 보내기"
+  },
+  "nav": {
+    "home": "홈",
+    "products": "상품",
+    "quote": "견적"
+  },
+  "product": {
+    "bestSeller": "베스트셀러",
+    "newArrival": "신상품",
+    "moq": "최소 주문 수량",
+    "capacity": "용량",
+    "contactForPrice": "문의하여 도매가 받기",
+    "rating": "평점",
+    "reviews": "리뷰"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "notFound": "상품을 찾을 수 없습니다.",
+    "backToCatalog": "상품 목록으로 돌아가기",
+    "backToProducts": "상품 목록으로",
+    "all": "전체"
+  },
+  "categories": {
+    "skincare": "스킨케어",
+    "makeup": "메이크업",
+    "masks": "마스크팩",
+    "haircare": "헤어케어",
+    "bodycare": "바디케어",
+    "beauty-tools": "뷰티 도구"
+  }
+}

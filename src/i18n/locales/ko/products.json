@@ -1,0 +1,60 @@
+{
+  "catalog": {
+    "eyebrow": "상품 카탈로그",
+    "title": "전체 도매 상품",
+    "subtitle": "{{count}}개의 한국 화장품 정품 도매 상품을 만나보세요.",
+    "filter": "필터",
+    "sortBy": "정렬",
+    "sortNewest": "최신순",
+    "sortPopular": "인기순",
+    "sortName": "상품명 (가나다)",
+    "results": "{{shown}} / {{total}} 상품 표시",
+    "noResults": "검색 결과가 없습니다.",
+    "loadMore": "더 보기",
+    "viewNProducts": "{{count}}개 상품 보기",
+    "filterTitle": "상품 필터",
+    "category": "카테고리",
+    "brand": "브랜드",
+    "moqRange": "최소 주문 수량",
+    "moqLow": "12 이하",
+    "moqMedium": "13 - 24",
+    "moqHigh": "24 초과",
+    "step": "단계"
+  },
+  "detail": {
+    "wholesalePrice": "도매가",
+    "contactForPrice": "문의하여 도매가 받기",
+    "quoteDesc": "수량 및 브랜드별 상세 견적",
+    "specs": {
+      "category": "카테고리",
+      "capacity": "용량",
+      "origin": "원산지",
+      "moq": "최소 주문 수량"
+    },
+    "shippingInfo": "도매 및 배송 정보",
+    "shippingDesc": "최소 {{moq}}개부터 주문 가능합니다. 전국 배송, 표준 수출 포장을 지원합니다. 24시간 내 상세 견적을 받을 수 있습니다.",
+    "benefits": "주요 효능",
+    "usage": "사용 방법",
+    "ingredients": "주요 성분",
+    "relatedProducts": "관련 상품",
+    "moqUnit": "개"
+  },
+  "categories": {
+    "skincare": "스킨케어",
+    "makeup": "메이크업",
+    "masks": "마스크팩",
+    "haircare": "헤어케어",
+    "bodycare": "바디케어",
+    "beautyTools": "뷰티 도구"
+  },
+  "brands": {
+    "COSRX": "COSRX",
+    "Innisfree": "Innisfree",
+    "Laneige": "Laneige",
+    "Etude House": "Etude House",
+    "Some By Mi": "Some By Mi",
+    "Missha": "Missha",
+    "The Face Shop": "The Face Shop",
+    "Tony Moly": "Tony Moly"
+  }
+}

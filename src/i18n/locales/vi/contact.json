@@ -1,0 +1,88 @@
+{
+  "contact": {
+    "eyebrow": "Liên hệ",
+    "title": "Liên hệ K-Beauty Wholesale",
+    "subtitle": "Đội ngũ tư vấn sỉ sẵn sàng hỗ trợ bạn. Liên hệ qua Zalo để được phản hồi nhanh nhất.",
+    "zalo": "Zalo",
+    "zaloDesc": "{{phone}} — Khuyến nghị phản hồi nhanh nhất",
+    "hotline": "Hotline",
+    "email": "Email",
+    "address": "Địa chỉ văn phòng",
+    "hours": "Giờ làm việc",
+    "hoursWeekday": "Thứ 2 - Thứ 7: 8:00 - 17:30",
+    "hoursSunday": "Chủ nhật: Nghỉ",
+    "ctaTitle": "Gửi yêu cầu báo giá sỉ",
+    "ctaSubtitle": "Điền form báo giá với danh sách sản phẩm và số lượng để nhận mức giá sỉ tốt nhất trong 24 giờ.",
+    "ctaButton": "Yêu cầu báo giá",
+    "ctaViewProducts": "Xem sản phẩm"
+  },
+  "inquiry": {
+    "eyebrow": "Báo giá sỉ",
+    "title": "Yêu cầu báo giá sỉ mỹ phẩm Hàn Quốc",
+    "subtitle": "Điền form dưới đây với thông tin sản phẩm và số lượng bạn quan tâm. Chúng tôi sẽ gửi báo giá sỉ chi tiết trong vòng 24 giờ.",
+    "breadcrumb": "Yêu cầu báo giá sỉ",
+    "sections": {
+      "contactInfo": "Thông tin liên hệ",
+      "orderInfo": "Thông tin đơn hàng"
+    },
+    "fields": {
+      "fullName": "Họ và tên",
+      "fullNamePlaceholder": "Nguyễn Văn A",
+      "company": "Tên công ty / Shop",
+      "companyPlaceholder": "Shop Mỹ Phẩm ABC",
+      "phone": "Số điện thoại",
+      "phonePlaceholder": "0901 234 567",
+      "zaloId": "Zalo ID",
+      "zaloIdPlaceholder": "0901 234 567",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "city": "Tỉnh / Thành phố",
+      "cityPlaceholder": "TP. Hồ Chí Minh",
+      "interestedProducts": "Sản phẩm quan tâm",
+      "interestedProductsPlaceholder": "VD: Tinh chất ốc snail COSRX, Kem dưỡng Laneige Water Bank...",
+      "interestedProductsHint": "Gợi ý: Bạn có thể xem danh sách sản phẩm tại",
+      "quantities": "Số lượng dự kiến",
+      "quantitiesPlaceholder": "VD: 50 sản phẩm mỗi loại, tổng 200 sản phẩm",
+      "schedule": "Thời gian dự kiến đặt hàng",
+      "message": "Lời nhắn thêm",
+      "messagePlaceholder": "Mô tả nhu cầu, khách hàng mục tiêu, hoặc yêu cầu đặc biệt khác..."
+    },
+    "scheduleOptions": {
+      "1week": "Trong 1 tuần",
+      "2-4weeks": "Trong 2-4 tuần",
+      "1-2months": "Trong 1-2 tháng",
+      "exploring": "Đang tìm hiểu"
+    },
+    "validation": {
+      "fullName": "Vui lòng nhập họ tên",
+      "phone": "Vui lòng nhập số điện thoại",
+      "phoneInvalid": "Số điện thoại không hợp lệ",
+      "city": "Vui lòng nhập tỉnh/thành phố",
+      "interestedProducts": "Vui lòng nhập sản phẩm quan tâm",
+      "emailInvalid": "Email không hợp lệ"
+    },
+    "submit": "Gửi yêu cầu báo giá",
+    "privacy": "Thông tin của bạn được bảo mật và chỉ dùng để liên hệ báo giá.",
+    "success": {
+      "title": "Yêu cầu đã được gửi thành công!",
+      "message": "Cảm ơn bạn đã liên hệ. Đội ngũ tư vấn sỉ của K-Beauty Wholesale sẽ phản hồi báo giá chi tiết trong vòng 24 giờ làm việc qua Zalo hoặc số điện thoại bạn đã cung cấp."
+    },
+    "summary": "Thông tin đã gửi",
+    "labels": {
+      "fullName": "Họ tên",
+      "company": "Công ty/Shop",
+      "phone": "Điện thoại",
+      "zaloId": "Zalo ID",
+      "email": "Email",
+      "city": "Tỉnh/Thành",
+      "interestedProducts": "Sản phẩm quan tâm",
+      "quantities": "Số lượng dự kiến",
+      "schedule": "Thời gian dự kiến",
+      "message": "Lời nhắn"
+    },
+    "newRequest": "Gửi yêu cầu mới",
+    "viewMoreProducts": "Xem thêm sản phẩm",
+    "linkToProducts": "trang sản phẩm",
+    "linkToProductsText": "Gợi ý: Bạn có thể xem danh sách sản phẩm tại"
+  }
+}

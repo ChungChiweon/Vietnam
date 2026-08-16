@@ -1,0 +1,42 @@
+{
+  "wholesale": {
+    "title": "Chính sách bán sỉ",
+    "eyebrow": "Chính sách sỉ",
+    "sections": {
+      "1": { "heading": "1. Số lượng tối thiểu (MOQ)", "body": "Mỗi sản phẩm có số lượng tối thiểu đặt hàng khác nhau, dao động từ 10 đến 48 sản phẩm. MOQ cụ thể được ghi rõ trên từng trang sản phẩm. Chúng tôi hỗ trợ MOQ linh hoạt cho khách hàng mới bắt đầu kinh doanh." },
+      "2": { "heading": "2. Chiết khấu theo số lượng", "body": "Chiết khấu sỉ tăng dần theo số lượng đặt hàng. Đơn hàng càng lớn, chiết khấu càng cao. Mức chiết khấu chi tiết sẽ được gửi trong báo giá cụ thể cho từng đơn hàng." },
+      "3": { "heading": "3. Báo giá và thanh toán", "body": "Báo giá được gửi trong vòng 24 giờ làm việc sau khi nhận yêu cầu. Giá báo giá có hiệu lực trong 7 ngày. Thanh toán bằng chuyển khoản ngân hàng, thu hộ (COD) hoặc các phương thức được thỏa thuận." },
+      "4": { "heading": "4. Vận chuyển và giao hàng", "body": "Chúng tôi vận chuyển toàn quốc, đóng gói chuẩn theo yêu cầu xuất khẩu. Thời gian giao hàng từ 2-5 ngày làm việc tùy khu vực. Phí vận chuyển được tính theo khối lượng và địa chỉ giao hàng." },
+      "5": { "heading": "5. Bảo hành và đổi trả", "body": "Tất cả sản phẩm đều chính hãng 100%. Nếu có lỗi do nhà sản xuất, chúng tôi hỗ trợ đổi trả trong vòng 7 ngày kể từ ngày nhận hàng. Vui lòng kiểm tra hàng khi nhận." },
+      "6": { "heading": "6. Hỗ trợ khách hàng sỉ", "body": "Khách hàng sỉ được hỗ trợ tư vấn sản phẩm, hình ảnh marketing, tài liệu sản phẩm và thông tin thị trường. Đội ngũ tư vấn luôn sẵn sàng đồng hành cùng doanh nghiệp của bạn." }
+    },
+    "ctaTitle": "Còn câu hỏi? Liên hệ với chúng tôi.",
+    "ctaContact": "Liên hệ tư vấn",
+    "ctaQuote": "Yêu cầu báo giá"
+  },
+  "privacy": {
+    "title": "Chính sách bảo mật",
+    "eyebrow": "Bảo mật",
+    "sections": {
+      "1": { "heading": "1. Thu thập thông tin", "body": "Chúng tôi thu thập thông tin liên hệ (họ tên, số điện thoại, email, Zalo, địa chỉ) và thông tin đơn hàng mà bạn tự nguyện cung cấp qua form báo giá hoặc liên hệ trực tiếp." },
+      "2": { "heading": "2. Sử dụng thông tin", "body": "Thông tin được sử dụng duy nhất để liên hệ báo giá, tư vấn sản phẩm và xử lý đơn hàng sỉ. Chúng tôi không sử dụng thông tin của bạn cho mục đích tiếp thị không liên quan." },
+      "3": { "heading": "3. Bảo mật thông tin", "body": "Thông tin khách hàng được bảo mật và lưu trữ an toàn. Chúng tôi không chia sẻ, bán hoặc cho thuê thông tin cá nhân của khách hàng cho bên thứ ba." },
+      "4": { "heading": "4. Quyền của khách hàng", "body": "Bạn có quyền yêu cầu xem, chỉnh sửa hoặc xóa thông tin cá nhân của mình bất kỳ lúc nào. Vui lòng liên hệ qua Zalo hoặc email để thực hiện quyền này." }
+    },
+    "ctaTitle": "Còn câu hỏi? Liên hệ với chúng tôi.",
+    "ctaContact": "Liên hệ tư vấn",
+    "ctaQuote": "Yêu cầu báo giá"
+  },
+  "returns": {
+    "title": "Chính sách đổi trả",
+    "eyebrow": "Đổi trả",
+    "sections": {
+      "1": { "heading": "1. Điều kiện đổi trả", "body": "Sản phẩm được đổi hoặc trả nếu có lỗi do nhà sản xuất, sai sản phẩm hoặc sai số lượng so với đơn hàng đã xác nhận. Yêu cầu đổi trả cần được gửi trong vòng 7 ngày kể từ ngày nhận hàng." },
+      "2": { "heading": "2. Quy trình đổi trả", "body": "Liên hệ qua Zalo hoặc hotline với thông tin đơn hàng và mô tả vấn đề. Chúng tôi sẽ hướng dẫn gửi trả sản phẩm và tiến hành đổi hoặc hoàn tiền theo tình trạng cụ thể." },
+      "3": { "heading": "3. Lưu ý", "body": "Sản phẩm đổi trả cần giữ nguyên tem nhãn, bao bì và tình trạng ban đầu. Chi phí vận chuyển do bên gây lỗi chi trả. Chúng tôi cam kết xử lý đổi trả nhanh chóng và minh bạch." }
+    },
+    "ctaTitle": "Còn câu hỏi? Liên hệ với chúng tôi.",
+    "ctaContact": "Liên hệ tư vấn",
+    "ctaQuote": "Yêu cầu báo giá"
+  }
+}

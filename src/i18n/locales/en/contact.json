@@ -1,0 +1,88 @@
+{
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Contact K-Beauty Wholesale",
+    "subtitle": "Our wholesale consultation team is ready to help. Get the fastest response via Zalo.",
+    "zalo": "Zalo",
+    "zaloDesc": "{{phone}} — Recommended for fastest response",
+    "hotline": "Hotline",
+    "email": "Email",
+    "address": "Office Address",
+    "hours": "Business Hours",
+    "hoursWeekday": "Mon-Sat: 8:00 - 17:30",
+    "hoursSunday": "Sunday: Closed",
+    "ctaTitle": "Request a Wholesale Quote",
+    "ctaSubtitle": "Fill out the quote form with your product list and quantities to get the best wholesale price within 24 hours.",
+    "ctaButton": "Request a Quote",
+    "ctaViewProducts": "View Products"
+  },
+  "inquiry": {
+    "eyebrow": "Wholesale Quote Request",
+    "title": "Request a Korean Cosmetics Wholesale Quote",
+    "subtitle": "Fill out the form below with the products and quantities you're interested in. We'll send a detailed wholesale quote within 24 hours.",
+    "breadcrumb": "Wholesale Quote Request",
+    "sections": {
+      "contactInfo": "Contact Information",
+      "orderInfo": "Order Information"
+    },
+    "fields": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "company": "Company / Store Name",
+      "companyPlaceholder": "ABC Cosmetics Shop",
+      "phone": "Phone Number",
+      "phonePlaceholder": "0901 234 567",
+      "zaloId": "Zalo ID",
+      "zaloIdPlaceholder": "0901 234 567",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "city": "Country / City",
+      "cityPlaceholder": "Ho Chi Minh City",
+      "interestedProducts": "Interested Products",
+      "interestedProductsPlaceholder": "e.g. COSRX Snail Essence, Laneige Water Bank Cream...",
+      "interestedProductsHint": "Tip: You can browse the product list on the",
+      "quantities": "Estimated Quantity",
+      "quantitiesPlaceholder": "e.g. 50 units each, 200 units total",
+      "schedule": "Expected Order Date",
+      "message": "Additional Message",
+      "messagePlaceholder": "Describe your needs, target customers, or special requests..."
+    },
+    "scheduleOptions": {
+      "1week": "Within 1 week",
+      "2-4weeks": "Within 2-4 weeks",
+      "1-2months": "Within 1-2 months",
+      "exploring": "Just exploring"
+    },
+    "validation": {
+      "fullName": "Please enter your full name",
+      "phone": "Please enter your phone number",
+      "phoneInvalid": "Please enter a valid phone number",
+      "city": "Please enter your country/city",
+      "interestedProducts": "Please enter interested products",
+      "emailInvalid": "Please enter a valid email"
+    },
+    "submit": "Send Quote Request",
+    "privacy": "Your information is kept confidential and used only for quoting.",
+    "success": {
+      "title": "Request sent successfully!",
+      "message": "Thank you for contacting us. The K-Beauty Wholesale team will respond with a detailed quote within 24 business hours via Zalo or the phone number you provided."
+    },
+    "summary": "Submitted Information",
+    "labels": {
+      "fullName": "Full Name",
+      "company": "Company/Store",
+      "phone": "Phone",
+      "zaloId": "Zalo ID",
+      "email": "Email",
+      "city": "Country/City",
+      "interestedProducts": "Interested Products",
+      "quantities": "Estimated Qty",
+      "schedule": "Order Date",
+      "message": "Message"
+    },
+    "newRequest": "Send New Request",
+    "viewMoreProducts": "View More Products",
+    "linkToProducts": "products page",
+    "linkToProductsText": "Tip: You can browse the product list on the"
+  }
+}

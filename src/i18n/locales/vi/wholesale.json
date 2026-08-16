@@ -1,0 +1,25 @@
+{
+  "guide": {
+    "eyebrow": "Hướng dẫn bán sỉ",
+    "title": "Hướng dẫn đặt hàng sỉ mỹ phẩm Hàn Quốc",
+    "subtitle": "Quy trình đơn giản 5 bước để bạn nhập hàng sỉ mỹ phẩm Hàn Quốc chính hãng với giá tốt nhất.",
+    "steps": {
+      "1": { "title": "Bước 1: Chọn sản phẩm", "desc": "Duyệt danh mục sản phẩm trên website của chúng tôi. Bạn có thể tìm kiếm theo tên, lọc theo danh mục, thương hiệu hoặc số lượng tối thiểu (MOQ). Chọn những sản phẩm phù hợp với tệp khách hàng của bạn." },
+      "2": { "title": "Bước 2: Gửi yêu cầu báo giá", "desc": "Điền form yêu cầu báo giá sỉ trên website hoặc liên hệ trực tiếp qua Zalo. Cung cấp tên sản phẩm, số lượng dự kiến và thông tin liên hệ của bạn." },
+      "3": { "title": "Bước 3: Nhận báo giá chi tiết", "desc": "Trong vòng 24 giờ làm việc, chúng tôi sẽ gửi báo giá sỉ chi tiết bao gồm đơn giá theo số lượng, chiết khấu và thông tin vận chuyển." },
+      "4": { "title": "Bước 4: Xác nhận & vận chuyển", "desc": "Sau khi chốt báo giá, bạn xác nhận số lượng cuối cùng. Chúng tôi tiến hành đóng gói chuẩn và bố trí vận chuyển đến địa chỉ của bạn." },
+      "5": { "title": "Bước 5: Hoàn tất đơn sỉ", "desc": "Nhận hàng, kiểm tra số lượng và chất lượng. Bắt đầu kinh doanh mỹ phẩm Hàn Quốc chính hãng với mức giá sỉ cạnh tranh." }
+    },
+    "policiesTitle": "Chính sách bán sỉ",
+    "policies": {
+      "moq": { "title": "Số lượng tối thiểu (MOQ)", "desc": "MOQ linh hoạt từ 10-48 sản phẩm tùy loại, phù hợp cả người mới bắt đầu kinh doanh." },
+      "discount": { "title": "Chiết khấu theo số lượng", "desc": "Chiết khấu tăng dần theo số lượng đặt hàng, giá sỉ càng nhiều càng tốt." },
+      "warranty": { "title": "Bảo hành chính hãng", "desc": "Tất cả sản phẩm đều chính hãng 100%, có đầy đủ giấy tờ chứng nhận nguồn gốc." },
+      "support": { "title": "Hỗ trợ sau bán", "desc": "Tư vấn sản phẩm, hỗ trợ hình ảnh và tài liệu marketing cho khách hàng sỉ." }
+    },
+    "ctaTitle": "Sẵn sàng đặt hàng sỉ?",
+    "ctaSubtitle": "Gửi yêu cầu báo giá ngay hôm nay để nhận mức giá sỉ tốt nhất cho doanh nghiệp của bạn.",
+    "ctaButton": "Gửi yêu cầu báo giá",
+    "ctaViewProducts": "Xem sản phẩm"
+  }
+}

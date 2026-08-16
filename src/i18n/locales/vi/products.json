@@ -1,0 +1,54 @@
+{
+  "catalog": {
+    "eyebrow": "Danh mục chuyên nghiệp",
+    "title": "Sản phẩm chuyên nghiệp từ Hàn Quốc",
+    "subtitle": "Khám phá {{count}} sản phẩm phun xăm, nối mi và làm đẹp chuyên nghiệp từ Hàn Quốc.",
+    "filter": "Bộ lọc",
+    "sortBy": "Sắp xếp",
+    "sortNewest": "Mới nhất",
+    "sortPopular": "Phổ biến",
+    "sortName": "Tên sản phẩm",
+    "results": "Hiển thị {{shown}} / {{total}} sản phẩm",
+    "noResults": "Không tìm thấy sản phẩm phù hợp.",
+    "loadMore": "Xem thêm",
+    "viewNProducts": "Xem {{count}} sản phẩm",
+    "filterTitle": "Bộ lọc sản phẩm",
+    "category": "Danh mục",
+    "brand": "Thương hiệu",
+    "moqRange": "Số lượng tối thiểu",
+    "moqLow": "12 sản phẩm trở xuống",
+    "moqMedium": "13 - 24 sản phẩm",
+    "moqHigh": "Trên 24 sản phẩm",
+    "step": "Bước"
+  },
+  "detail": {
+    "wholesalePrice": "Giá sỉ tại Việt Nam",
+    "contactForPrice": "Liên hệ để nhận báo giá",
+    "quoteDesc": "Giá được xác nhận theo sản phẩm, lựa chọn và số lượng.",
+    "specs": {
+      "category": "Danh mục",
+      "capacity": "Lựa chọn",
+      "origin": "Xuất xứ",
+      "moq": "Đơn hàng tối thiểu"
+    },
+    "shippingInfo": "Báo giá & vận chuyển",
+    "shippingDesc": "Liên hệ để xác nhận số lượng, giá sỉ và phương án giao hàng đến Việt Nam.",
+    "benefits": "Đặc điểm chính",
+    "usage": "Hướng dẫn sử dụng",
+    "ingredients": "Thông số sản phẩm",
+    "relatedProducts": "Sản phẩm liên quan",
+    "moqUnit": "sản phẩm"
+  },
+  "categories": {
+    "pmu-machines-needles": "Máy & kim phun xăm",
+    "pmu-pigments": "Mực phun xăm",
+    "pmu-supplies": "Dụng cụ phun xăm",
+    "lash": "Sản phẩm nối mi",
+    "waxing": "Sản phẩm waxing",
+    "oem": "OEM & ODM",
+    "competition": "Dụng cụ thi đấu"
+  },
+  "brands": {
+    "K-Beauty Wholesale": "K-Beauty Wholesale"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "brandName": "K-Beauty",
+  "brandSuffix": "Wholesale",
+  "languageSelector": "Select language",
+  "search": "Search",
+  "searchPlaceholder": "Search products, brands...",
+  "menu": {
+    "open": "Open menu",
+    "close": "Close",
+    "products": "Products",
+    "categories": "Categories",
+    "newArrivals": "New Arrivals",
+    "bestSellers": "Best Sellers",
+    "wholesaleGuide": "Wholesale Guide",
+    "contact": "Contact",
+    "allProducts": "All Products"
+  },
+  "actions": {
+    "viewProducts": "View Products",
+    "contactZalo": "Contact via Zalo",
+    "requestQuote": "Request a Quote",
+    "viewDetails": "View Details",
+    "viewAll": "View All",
+    "loadMore": "Load More",
+    "send": "Send",
+    "reset": "Reset",
+    "close": "Close",
+    "clearFilters": "Clear All",
+    "newRequest": "Send New Request"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "quote": "Quote"
+  },
+  "product": {
+    "bestSeller": "Best Seller",
+    "newArrival": "New Arrival",
+    "moq": "MOQ",
+    "capacity": "Capacity",
+    "contactForPrice": "Contact for Wholesale Pricing",
+    "rating": "Rating",
+    "reviews": "reviews"
+  },
+  "common": {
+    "loading": "Loading...",
+    "notFound": "Product not found.",
+    "backToCatalog": "Back to product catalog",
+    "backToProducts": "Back to products",
+    "all": "All"
+  },
+  "categories": {
+    "skincare": "Skincare",
+    "makeup": "Makeup",
+    "masks": "Face Masks",
+    "haircare": "Hair Care",
+    "bodycare": "Body Care",
+    "beauty-tools": "Beauty Tools"
+  }
+}

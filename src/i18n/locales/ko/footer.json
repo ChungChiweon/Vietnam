@@ -1,0 +1,27 @@
+{
+  "footer": {
+    "brandName": "K-뷰티",
+    "brandSuffix": "도매",
+    "tagline": "한국 화장품 정품 도매 전문 — 베트남 소매업체, 대리점, 살롱에 정품을 공급합니다.",
+    "policiesTitle": "정책",
+    "wholesaleGuide": "도매 주문 안내",
+    "wholesalePolicy": "도매 정책",
+    "privacyPolicy": "개인정보 처리방침",
+    "returnsPolicy": "교환/환불 정책",
+    "categoriesTitle": "카테고리",
+    "contactTitle": "문의",
+    "copyright": "© 2026 K-뷰티 도매. 모든 권리 보유.",
+    "subtitle": "한국 화장품 정품 — 전국 도매 공급"
+  },
+  "seo": {
+    "home": { "title": "K-뷰티 도매 | 한국 화장품 도매", "description": "한국 화장품 정품 도매 — 베트남 소매업체, 대리점, 살롱을 위한 최고의 도매가" },
+    "catalog": { "title": "상품 카탈로그 | K-뷰티 도매", "description": "한국 화장품 정품 도매 상품을 탐색하세요. 스킨케어, 메이크업, 마스크팩, 헤어케어 등." },
+    "product": { "title": "{{name}} | K-뷰티 도매", "description": "{{name}} — 한국 화장품 정품 도매. 견적 요청은 문의해 주세요." },
+    "inquiry": { "title": "도매 견적 요청 | K-뷰티 도매", "description": "한국 화장품 도매 견적을 요청하세요. 24시간 내 상세 견적을 받을 수 있습니다." },
+    "guide": { "title": "도매 안내 | K-뷰티 도매", "description": "한국 화장품 도매 주문 절차와 정책을 안내합니다." },
+    "contact": { "title": "문의 | K-뷰티 도매", "description": "K-뷰티 도매에 문의하세요. Zalo, 전화, 이메일로 연락 가능합니다." },
+    "policyWholesale": { "title": "도매 정책 | K-뷰티 도매", "description": "도매 정책 — 최소 주문 수량, 할인, 배송, 보증 안내" },
+    "policyPrivacy": { "title": "개인정보 처리방침 | K-뷰티 도매", "description": "개인정보 수집, 사용, 보안 및 고객 권리 안내" },
+    "policyReturns": { "title": "교환/환불 정책 | K-뷰티 도매", "description": "교환/환불 조건, 절차 및 주의사항 안내" }
+  }
+}

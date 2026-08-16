@@ -1,0 +1,42 @@
+{
+  "wholesale": {
+    "title": "Wholesale Policy",
+    "eyebrow": "Wholesale Policy",
+    "sections": {
+      "1": { "heading": "1. Minimum Order Quantity (MOQ)", "body": "Each product has a different minimum order quantity, ranging from 10 to 48 units. The MOQ is clearly stated on each product page. We offer flexible MOQ for customers starting a business." },
+      "2": { "heading": "2. Volume Discounts", "body": "Wholesale discounts increase with order quantity. Larger orders receive greater discounts. Detailed discount rates are included in each order quote." },
+      "3": { "heading": "3. Quotation and Payment", "body": "Quotes are sent within 24 business hours of receiving a request. Quotes are valid for 7 days. Payment by bank transfer, COD, or agreed methods." },
+      "4": { "heading": "4. Shipping and Delivery", "body": "We ship nationwide with standard export packaging. Delivery takes 2-5 business days depending on region. Shipping costs are calculated by weight and destination." },
+      "5": { "heading": "5. Warranty and Returns", "body": "All products are 100% authentic. Manufacturer defects are eligible for exchange or refund within 7 days of receipt. Please inspect goods upon delivery." },
+      "6": { "heading": "6. Wholesale Customer Support", "body": "Wholesale customers receive product consultation, marketing images, product materials, and market information. Our team is ready to support your business." }
+    },
+    "ctaTitle": "Have more questions? Contact us.",
+    "ctaContact": "Contact Us",
+    "ctaQuote": "Request a Quote"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "eyebrow": "Privacy",
+    "sections": {
+      "1": { "heading": "1. Information Collection", "body": "We collect contact information (name, phone, email, Zalo, address) and order information that you voluntarily provide via quote requests or direct contact." },
+      "2": { "heading": "2. Information Use", "body": "Information is used solely for quoting, product consultation, and wholesale order processing. We do not use your information for unrelated marketing." },
+      "3": { "heading": "3. Information Security", "body": "Customer information is stored securely and kept confidential. We do not share, sell, or rent personal information to third parties." },
+      "4": { "heading": "4. Your Rights", "body": "You have the right to access, correct, or delete your personal information at any time. Contact us via Zalo or email to exercise this right." }
+    },
+    "ctaTitle": "Have more questions? Contact us.",
+    "ctaContact": "Contact Us",
+    "ctaQuote": "Request a Quote"
+  },
+  "returns": {
+    "title": "Returns Policy",
+    "eyebrow": "Returns",
+    "sections": {
+      "1": { "heading": "1. Return Conditions", "body": "Products can be exchanged or returned for manufacturer defects, wrong products, or quantity mismatches. Requests must be submitted within 7 days of receipt." },
+      "2": { "heading": "2. Return Process", "body": "Contact us via Zalo or hotline with order details and a description of the issue. We will guide you through the return process and proceed with exchange or refund." },
+      "3": { "heading": "3. Notes", "body": "Returned products must retain original labels, packaging, and condition. Shipping costs are borne by the party at fault. We ensure prompt and transparent processing." }
+    },
+    "ctaTitle": "Have more questions? Contact us.",
+    "ctaContact": "Contact Us",
+    "ctaQuote": "Request a Quote"
+  }
+}

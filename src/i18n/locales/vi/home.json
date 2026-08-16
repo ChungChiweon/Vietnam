@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "eyebrow": "Mỹ phẩm Hàn Quốc · Bán sỉ chính hãng",
+    "title": "Mỹ phẩm Hàn Quốc chính hãng — giá sỉ tốt nhất cho nhà bán lẻ Việt Nam",
+    "subtitle": "Nguồn hàng sỉ uy tín từ các thương hiệu Hàn Quốc hàng đầu. Hỗ trợ số lượng nhỏ, tư vấn chuyên nghiệp và vận chuyển toàn quốc cho đại lý, salon và shop online.",
+    "badgeTitle": "Chính hãng 100%",
+    "badgeDesc": "Nhập khẩu trực tiếp từ Hàn Quốc",
+    "stats": {
+      "brands": "Thương hiệu",
+      "products": "Sản phẩm sỉ",
+      "experience": "Kinh nghiệm xuất khẩu"
+    }
+  },
+  "benefits": {
+    "eyebrow": "Lợi ích bán sỉ",
+    "title": "Tại sao chọn K-Beauty Wholesale?",
+    "subtitle": "Chúng tôi mang đến giải pháp nhập hàng sỉ toàn diện cho doanh nghiệp mỹ phẩm của bạn.",
+    "items": {
+      "authentic": { "title": "Sản phẩm chính hãng", "desc": "Nhập khẩu trực tiếp từ Hàn Quốc, đầy đủ chứng nhận nguồn gốc." },
+      "pricing": { "title": "Giá sỉ cạnh tranh", "desc": "Chiết khấu cao theo số lượng, giá tốt cho đại lý và shop online." },
+      "moq": { "title": "Số lượng tối thiểu linh hoạt", "desc": "Hỗ trợ MOQ thấp, phù hợp cả người mới bắt đầu kinh doanh." },
+      "shipping": { "title": "Xuất khẩu & vận chuyển", "desc": "Giao hàng toàn quốc, đóng gói chuẩn, hỗ trợ thủ tục hải quan." },
+      "updates": { "title": "Sản phẩm cập nhật liên tục", "desc": "Liên tục bổ sung sản phẩm mới theo xu hướng làm đẹp Hàn Quốc." },
+      "consultation": { "title": "Tư vấn bằng tiếng Việt", "desc": "Đội ngũ tư vấn chuyên nghiệp, hỗ trợ chọn sản phẩm phù hợp." }
+    }
+  },
+  "categories": {
+    "eyebrow": "Danh mục",
+    "title": "Khám phá danh mục sản phẩm",
+    "skincare": { "name": "Chăm sóc da", "desc": "Sữa rửa mặt, tinh chất, kem dưỡng và kem chống nắng" },
+    "makeup": { "name": "Trang điểm", "desc": "Kem lót, son môi, phấn mắt và phấn má hồng" },
+    "masks": { "name": "Mặt nạ", "desc": "Mặt nạ giấy, mặt nạ ngủ và mặt nạ rửa" },
+    "haircare": { "name": "Chăm sóc tóc", "desc": "Dầu gội, dầu xả, tinh dầu và kem ủ tóc" },
+    "bodycare": { "name": "Chăm sóc cơ thể", "desc": "Sữa tắm, lotion dưỡng thể và tẩy tế bào chết" },
+    "beautyTools": { "name": "Dụng cụ làm đẹp", "desc": "Con lăn jade, cọ trang điểm và máy làm sạch" }
+  },
+  "bestSellers": {
+    "eyebrow": "Bán chạy nhất",
+    "title": "Sản phẩm bán chạy"
+  },
+  "newArrivals": {
+    "eyebrow": "Mới về hàng",
+    "title": "Sản phẩm mới về"
+  },
+  "process": {
+    "eyebrow": "Quy trình",
+    "title": "Quy trình đặt hàng sỉ",
+    "subtitle": "Năm bước đơn giản để bạn nhập hàng sỉ mỹ phẩm Hàn Quốc nhanh chóng.",
+    "steps": {
+      "1": { "title": "Chọn sản phẩm", "desc": "Duyệt danh mục và chọn sản phẩm phù hợp với khách hàng của bạn." },
+      "2": { "title": "Gửi yêu cầu", "desc": "Điền form báo giá hoặc liên hệ Zalo với danh sách sản phẩm cần mua." },
+      "3": { "title": "Nhận báo giá", "desc": "Chúng tôi gửi báo giá sỉ chi tiết trong vòng 24 giờ làm việc." },
+      "4": { "title": "Xác nhận & vận chuyển", "desc": "Xác nhận số lượng, thanh toán và thủ tục vận chuyển được bố trí." },
+      "5": { "title": "Hoàn tất đơn sỉ", "desc": "Nhận hàng, kiểm tra và bắt đầu kinh doanh mỹ phẩm Hàn Quốc." }
+    }
+  },
+  "trust": {
+    "eyebrow": "Độ tin cậy",
+    "title": "Đối tác sỉ đáng tin cậy cho doanh nghiệp mỹ phẩm của bạn",
+    "subtitle": "Chúng tôi cam kết cung cấp sản phẩm chính hãng, nguồn hàng ổn định và hỗ trợ toàn diện cho khách hàng sỉ.",
+    "items": {
+      "sourcing": { "title": "Nguồn hàng chính hãng", "desc": "Mọi sản phẩm đều được nhập khẩu chính ngạch, có đầy đủ giấy tờ chứng nhận nguồn gốc từ Hàn Quốc." },
+      "supplier": { "title": "Nhà cung cấp sỉ uy tín", "desc": "Đối tác phân phối chính thức của nhiều thương hiệu mỹ phẩm Hàn Quốc lớn." },
+      "export": { "title": "Kinh nghiệm xuất khẩu", "desc": "Hơn 5 năm kinh nghiệm xuất khẩu và vận chuyển mỹ phẩm quốc tế, đảm bảo hàng đến tay an toàn." },
+      "consultation": { "title": "Tư vấn tận tâm", "desc": "Đội ngũ tư vấn am hiểu thị trường Việt Nam, hỗ trợ chọn sản phẩm phù hợp với tệp khách hàng của bạn." }
+    },
+    "badgeAuthentic": "Chính hãng",
+    "badgeAuthenticLabel": "100%",
+    "badgeQuote": "Báo giá",
+    "badgeQuoteLabel": "24h"
+  },
+  "cta": {
+    "eyebrow": "Yêu cầu báo giá sỉ",
+    "title": "Nhận báo giá sỉ mỹ phẩm Hàn Quốc trong 24 giờ",
+    "subtitle": "Gửi cho chúng tôi tên sản phẩm, số lượng và thông tin liên hệ. Đội ngũ tư vấn sẽ phản hồi nhanh chóng với mức giá sỉ tốt nhất.",
+    "sendQuote": "Gửi yêu cầu báo giá",
+    "chatZalo": "Chat Zalo ngay"
+  }
+}

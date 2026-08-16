@@ -1,0 +1,27 @@
+{
+  "footer": {
+    "brandName": "K-Beauty",
+    "brandSuffix": "Wholesale",
+    "tagline": "Authentic Korean cosmetics wholesale distributor, supplying retailers, distributors, and beauty salons in Vietnam.",
+    "policiesTitle": "Policies",
+    "wholesaleGuide": "Wholesale Guide",
+    "wholesalePolicy": "Wholesale Policy",
+    "privacyPolicy": "Privacy Policy",
+    "returnsPolicy": "Returns Policy",
+    "categoriesTitle": "Categories",
+    "contactTitle": "Contact",
+    "copyright": "© 2026 K-Beauty Wholesale. All rights reserved.",
+    "subtitle": "Authentic Korean Cosmetics — Nationwide Wholesale"
+  },
+  "seo": {
+    "home": { "title": "K-Beauty Wholesale | Korean Cosmetics Wholesale", "description": "Authentic Korean cosmetics wholesale — best prices for Vietnamese retailers, distributors, and salons." },
+    "catalog": { "title": "Product Catalog | K-Beauty Wholesale", "description": "Explore authentic Korean cosmetics. Skincare, makeup, masks, hair care, and more." },
+    "product": { "title": "{{name}} | K-Beauty Wholesale", "description": "{{name}} — Authentic Korean cosmetics wholesale. Contact for a quote." },
+    "inquiry": { "title": "Wholesale Quote Request | K-Beauty Wholesale", "description": "Request a Korean cosmetics wholesale quote. Receive a detailed quote within 24 hours." },
+    "guide": { "title": "Wholesale Guide | K-Beauty Wholesale", "description": "Guide to ordering Korean cosmetics wholesale and our policies." },
+    "contact": { "title": "Contact | K-Beauty Wholesale", "description": "Contact K-Beauty Wholesale via Zalo, phone, or email." },
+    "policyWholesale": { "title": "Wholesale Policy | K-Beauty Wholesale", "description": "Wholesale policy — MOQ, discounts, shipping, warranty" },
+    "policyPrivacy": { "title": "Privacy Policy | K-Beauty Wholesale", "description": "Information collection, use, security, and customer rights" },
+    "policyReturns": { "title": "Returns Policy | K-Beauty Wholesale", "description": "Return conditions, process, and notes" }
+  }
+}

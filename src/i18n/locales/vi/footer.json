@@ -1,0 +1,27 @@
+{
+  "footer": {
+    "brandName": "K-Beauty",
+    "brandSuffix": "Wholesale",
+    "tagline": "Nhà phân phối mỹ phẩm Hàn Quốc chính hãng, chuyên cung cấp sỉ cho nhà bán lẻ, đại lý và salon làm đẹp tại Việt Nam.",
+    "policiesTitle": "Chính sách",
+    "wholesaleGuide": "Hướng dẫn đặt sỉ",
+    "wholesalePolicy": "Chính sách bán sỉ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "returnsPolicy": "Chính sách đổi trả",
+    "categoriesTitle": "Danh mục",
+    "contactTitle": "Liên hệ",
+    "copyright": "© 2026 K-Beauty Wholesale. Bản quyền thuộc về công ty TNHH K-Beauty Việt Nam.",
+    "subtitle": "Mỹ phẩm Hàn Quốc chính hãng — Phân phối sỉ toàn quốc"
+  },
+  "seo": {
+    "home": { "title": "K-Beauty Wholesale | Mỹ phẩm Hàn Quốc Bán Sỉ", "description": "Mỹ phẩm Hàn Quốc chính hãng — Bán sỉ cho nhà bán lẻ, đại lý và salon làm đẹp tại Việt Nam" },
+    "catalog": { "title": "Danh mục sản phẩm | K-Beauty Wholesale", "description": "Khám phá sản phẩm mỹ phẩm Hàn Quốc chính hãng. Chăm sóc da, trang điểm, mặt nạ, chăm sóc tóc và hơn thế nữa." },
+    "product": { "title": "{{name}} | K-Beauty Wholesale", "description": "{{name}} — Mỹ phẩm Hàn Quốc chính hãng bán sỉ. Liên hệ để nhận báo giá." },
+    "inquiry": { "title": "Yêu cầu báo giá sỉ | K-Beauty Wholesale", "description": "Gửi yêu cầu báo giá sỉ mỹ phẩm Hàn Quốc. Nhận báo giá chi tiết trong 24 giờ." },
+    "guide": { "title": "Hướng dẫn sỉ | K-Beauty Wholesale", "description": "Hướng dẫn quy trình đặt hàng sỉ và chính sách bán sỉ mỹ phẩm Hàn Quốc." },
+    "contact": { "title": "Liên hệ | K-Beauty Wholesale", "description": "Liên hệ K-Beauty Wholesale qua Zalo, điện thoại hoặc email." },
+    "policyWholesale": { "title": "Chính sách sỉ | K-Beauty Wholesale", "description": "Chính sách bán sỉ — MOQ, chiết khấu, vận chuyển, bảo hành" },
+    "policyPrivacy": { "title": "Chính sách bảo mật | K-Beauty Wholesale", "description": "Thu thập, sử dụng, bảo mật thông tin và quyền của khách hàng" },
+    "policyReturns": { "title": "Chính sách đổi trả | K-Beauty Wholesale", "description": "Điều kiện, quy trình đổi trả và lưu ý" }
+  }
+}

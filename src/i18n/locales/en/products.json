@@ -1,0 +1,60 @@
+{
+  "catalog": {
+    "eyebrow": "Product Catalog",
+    "title": "All Wholesale Products",
+    "subtitle": "Explore {{count}} authentic Korean cosmetics products available for wholesale.",
+    "filter": "Filters",
+    "sortBy": "Sort",
+    "sortNewest": "Newest",
+    "sortPopular": "Most Popular",
+    "sortName": "Product Name (A-Z)",
+    "results": "Showing {{shown}} of {{total}} products",
+    "noResults": "No products found.",
+    "loadMore": "Load More",
+    "viewNProducts": "View {{count}} products",
+    "filterTitle": "Product Filters",
+    "category": "Category",
+    "brand": "Brand",
+    "moqRange": "Minimum Order Quantity",
+    "moqLow": "12 or less",
+    "moqMedium": "13 - 24",
+    "moqHigh": "More than 24",
+    "step": "Step"
+  },
+  "detail": {
+    "wholesalePrice": "Wholesale Price",
+    "contactForPrice": "Contact for Wholesale Pricing",
+    "quoteDesc": "Detailed quote by quantity and brand",
+    "specs": {
+      "category": "Category",
+      "capacity": "Capacity",
+      "origin": "Country of Origin",
+      "moq": "Minimum Order Quantity"
+    },
+    "shippingInfo": "Wholesale & Shipping Information",
+    "shippingDesc": "Order from a minimum of {{moq}} units. Nationwide shipping, standard export packaging. Receive a detailed quote within 24 hours.",
+    "benefits": "Key Benefits",
+    "usage": "How to Use",
+    "ingredients": "Key Ingredients",
+    "relatedProducts": "Related Products",
+    "moqUnit": "units"
+  },
+  "categories": {
+    "skincare": "Skincare",
+    "makeup": "Makeup",
+    "masks": "Face Masks",
+    "haircare": "Hair Care",
+    "bodycare": "Body Care",
+    "beautyTools": "Beauty Tools"
+  },
+  "brands": {
+    "COSRX": "COSRX",
+    "Innisfree": "Innisfree",
+    "Laneige": "Laneige",
+    "Etude House": "Etude House",
+    "Some By Mi": "Some By Mi",
+    "Missha": "Missha",
+    "The Face Shop": "The Face Shop",
+    "Tony Moly": "Tony Moly"
+  }
+}

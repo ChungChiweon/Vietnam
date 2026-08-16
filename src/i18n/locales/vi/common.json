@@ -1,0 +1,60 @@
+{
+  "brandName": "K-Beauty",
+  "brandSuffix": "Wholesale",
+  "languageSelector": "Chọn ngôn ngữ",
+  "search": "Tìm kiếm",
+  "searchPlaceholder": "Tìm sản phẩm, thương hiệu...",
+  "menu": {
+    "open": "Mở menu",
+    "close": "Đóng",
+    "products": "Sản phẩm",
+    "categories": "Danh mục",
+    "newArrivals": "Mới về",
+    "bestSellers": "Bán chạy",
+    "wholesaleGuide": "Hướng dẫn sỉ",
+    "contact": "Liên hệ",
+    "allProducts": "Tất cả sản phẩm"
+  },
+  "actions": {
+    "viewProducts": "Xem sản phẩm",
+    "contactZalo": "Liên hệ qua Zalo",
+    "requestQuote": "Yêu cầu báo giá",
+    "viewDetails": "Xem chi tiết",
+    "viewAll": "Xem tất cả",
+    "loadMore": "Xem thêm sản phẩm",
+    "send": "Gửi",
+    "reset": "Xóa lọc",
+    "close": "Đóng",
+    "clearFilters": "Xóa tất cả",
+    "newRequest": "Gửi yêu cầu mới"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "products": "Sản phẩm",
+    "quote": "Báo giá"
+  },
+  "product": {
+    "bestSeller": "Bán chạy",
+    "newArrival": "Mới về",
+    "moq": "MOQ",
+    "capacity": "Dung tích",
+    "contactForPrice": "Liên hệ để nhận giá sỉ",
+    "rating": "Đánh giá",
+    "reviews": "đánh giá"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "notFound": "Không tìm thấy sản phẩm.",
+    "backToCatalog": "Quay lại danh mục sản phẩm",
+    "backToProducts": "Quay lại danh mục",
+    "all": "Tất cả"
+  },
+  "categories": {
+    "skincare": "Chăm sóc da",
+    "makeup": "Trang điểm",
+    "masks": "Mặt nạ",
+    "haircare": "Chăm sóc tóc",
+    "bodycare": "Chăm sóc cơ thể",
+    "beauty-tools": "Dụng cụ làm đẹp"
+  }
+}

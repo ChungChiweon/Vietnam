@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory-50 text-charcoal-800 font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-300 hover:bg-rose-600 hover:shadow-card active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-rose-300 bg-white/80 px-6 py-3 text-sm font-medium text-rose-600 transition-all duration-300 hover:bg-rose-50 hover:border-rose-400 active:scale-[0.98];
+  }
+  .btn-zalo {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#0068FF] px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-300 hover:bg-[#0052cc] hover:shadow-card active:scale-[0.98];
+  }
+  .card {
+    @apply rounded-2xl border border-rose-100/60 bg-white shadow-soft transition-all duration-500;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-rose-100 bg-ivory-50/50 px-4 py-3 text-sm text-charcoal-800 placeholder:text-rose-300/60 focus:border-rose-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-200 transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+  }
+  .section-eyebrow {
+    @apply text-xs font-sans font-medium uppercase tracking-[0.2em] text-rose-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gradient-rose {
+    background: linear-gradient(135deg, #FDF2F4 0%, #FBE5E8 40%, #FFF5F5 100%);
+  }
+  .gradient-ivory {
+    background: linear-gradient(180deg, #FFFCF8 0%, #FBF6EF 100%);
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, #FFFCF8 0%, #FDF2F4 50%, #FBE5E8 100%);
+  }
+}

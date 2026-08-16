@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "eyebrow": "Korean Cosmetics · Authentic Wholesale",
+    "title": "Authentic Korean Cosmetics — Best Wholesale Prices for Vietnamese Retailers",
+    "subtitle": "Trusted wholesale supplier from Korea's leading beauty brands. Flexible MOQ, expert consultation, and nationwide shipping for distributors, salons, and online shops.",
+    "badgeTitle": "100% Authentic",
+    "badgeDesc": "Imported directly from Korea",
+    "stats": {
+      "brands": "Brands",
+      "products": "Wholesale Products",
+      "experience": "Export Experience"
+    }
+  },
+  "benefits": {
+    "eyebrow": "Wholesale Benefits",
+    "title": "Why Choose K-Beauty Wholesale?",
+    "subtitle": "We provide a comprehensive wholesale solution for your cosmetics business.",
+    "items": {
+      "authentic": { "title": "Authentic Products", "desc": "Imported directly from Korea with full origin certification." },
+      "pricing": { "title": "Competitive Wholesale Pricing", "desc": "High volume discounts, optimized for distributors and shops." },
+      "moq": { "title": "Flexible Minimum Order Quantity", "desc": "Low MOQ support, perfect for starting a business." },
+      "shipping": { "title": "Export & Shipping Support", "desc": "Nationwide delivery, standard packaging, customs support." },
+      "updates": { "title": "Continuous Product Updates", "desc": "New products added regularly following K-beauty trends." },
+      "consultation": { "title": "Vietnamese Consultation", "desc": "Expert team providing tailored product recommendations." }
+    }
+  },
+  "categories": {
+    "eyebrow": "Categories",
+    "title": "Explore Product Categories",
+    "skincare": { "name": "Skincare", "desc": "Cleansers, essences, creams, sun care" },
+    "makeup": { "name": "Makeup", "desc": "Primers, lipsticks, eyeshadows, blushers" },
+    "masks": { "name": "Face Masks", "desc": "Sheet masks, sleeping packs, wash-off" },
+    "haircare": { "name": "Hair Care", "desc": "Shampoo, conditioner, treatments" },
+    "bodycare": { "name": "Body Care", "desc": "Body wash, lotion, scrubs" },
+    "beautyTools": { "name": "Beauty Tools", "desc": "Jade rollers, brushes, cleansing tools" }
+  },
+  "bestSellers": {
+    "eyebrow": "Best Sellers",
+    "title": "Best Selling Products"
+  },
+  "newArrivals": {
+    "eyebrow": "New Arrivals",
+    "title": "New Arrivals"
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "Wholesale Order Process",
+    "subtitle": "Five simple steps to order Korean cosmetics wholesale.",
+    "steps": {
+      "1": { "title": "Choose Products", "desc": "Browse the catalog and select products for your customers." },
+      "2": { "title": "Submit Inquiry", "desc": "Fill out the quote request form or contact via Zalo." },
+      "3": { "title": "Receive Quotation", "desc": "We send a detailed wholesale quote within 24 business hours." },
+      "4": { "title": "Confirm & Ship", "desc": "Confirm quantity, pay, and shipping is arranged." },
+      "5": { "title": "Order Complete", "desc": "Receive goods and start your K-beauty business." }
+    }
+  },
+  "trust": {
+    "eyebrow": "Trust",
+    "title": "A Trusted Wholesale Partner for Your Beauty Business",
+    "subtitle": "We guarantee authentic products, stable supply, and comprehensive support for wholesale customers.",
+    "items": {
+      "sourcing": { "title": "Authentic Sourcing", "desc": "All products are officially imported with full Korean origin certificates." },
+      "supplier": { "title": "Trusted Wholesale Supplier", "desc": "Official distribution partner of major Korean cosmetics brands." },
+      "export": { "title": "Export Experience", "desc": "Over 5 years of international cosmetics export ensuring safe delivery." },
+      "consultation": { "title": "Dedicated Consultation", "desc": "Our team understands the Vietnamese market and recommends the right products." }
+    },
+    "badgeAuthentic": "Authentic",
+    "badgeAuthenticLabel": "100%",
+    "badgeQuote": "Quote",
+    "badgeQuoteLabel": "24h"
+  },
+  "cta": {
+    "eyebrow": "Request Wholesale Quote",
+    "title": "Get a Korean Cosmetics Wholesale Quote in 24 Hours",
+    "subtitle": "Send us product names, quantities, and contact info. Our team responds quickly with the best wholesale price.",
+    "sendQuote": "Send Quote Request",
+    "chatZalo": "Chat on Zalo"
+  }
+}
