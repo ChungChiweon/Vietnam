@@ -5,7 +5,15 @@ import { defaultLanguage, isLanguageCode } from '@/config/languages';
 
 export function useLanguage(): LanguageCode {
   const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
   if (lang && isLanguageCode(lang)) return lang;
+
+  // Shared layout components (Header, Footer, MobileNav) render outside the
+  // matched <Route>, so useParams() is empty there. Read the locale from the
+  // URL as a fallback to keep navigation and the language switcher in sync.
+  const pathLang = location.pathname.split('/').filter(Boolean)[0];
+  if (pathLang && isLanguageCode(pathLang)) return pathLang;
+
   return defaultLanguage;
 }
 
