@@ -4,6 +4,7 @@ import { CheckCircle, Send, FileText, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/utils/routing';
+import { createOrder } from '@/lib/orders';
 
 interface FormState {
   fullName: string;
@@ -38,6 +39,7 @@ export default function InquiryPage() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     const state = location.state as { productName?: string } | null;
@@ -63,11 +65,22 @@ export default function InquiryPage() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (ev: React.FormEvent) => {
+  const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault();
     if (validate()) {
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setSubmitting(true);
+      try {
+        await createOrder({
+          full_name: form.fullName.trim(), company: form.company.trim(), phone: form.phone.trim(),
+          zalo_id: form.zaloId.trim(), email: form.email.trim(), city: form.city.trim(),
+          products: form.interestedProducts.trim(), quantities: form.quantities.trim(), schedule: form.schedule,
+          message: form.message.trim(), language: lang,
+        });
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } finally {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -267,9 +280,9 @@ export default function InquiryPage() {
 
             {/* Submit */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <button type="submit" className="btn-primary w-full sm:w-auto">
+              <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-60 sm:w-auto">
                 <Send className="h-4 w-4" strokeWidth={1.8} />
-                {t('contact:inquiry.submit')}
+                {submitting ? 'Saving...' : t('contact:inquiry.submit')}
               </button>
               <p className="text-xs text-charcoal-700/40">
                 {t('contact:inquiry.privacy')}

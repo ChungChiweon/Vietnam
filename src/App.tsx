@@ -15,6 +15,7 @@ import InquiryPage from '@/pages/InquiryPage';
 import WholesaleGuidePage from '@/pages/WholesaleGuidePage';
 import ContactPage from '@/pages/ContactPage';
 import PolicyPage from '@/pages/PolicyPage';
+import AdminPage from '@/pages/AdminPage';
 
 function RootRedirect() {
   const location = useLocation();
@@ -40,6 +41,21 @@ function LangSync() {
 export default function App() {
   return (
     <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+
+  if (isAdmin) {
+    return <Routes><Route path="/admin/*" element={<AdminPage />} /></Routes>;
+  }
+
+  return (
+    <>
       <ScrollToTop />
       <LangSync />
       <div className="flex min-h-screen flex-col">
@@ -63,7 +79,6 @@ export default function App() {
         <MobileNav />
         <ZaloButton variant="floating" />
       </div>
-    </BrowserRouter>
+    </>
   );
 }
-
