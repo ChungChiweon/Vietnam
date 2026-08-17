@@ -1,0 +1,10 @@
+{
+  "name": "K-Beauty 주문 확인",
+  "short_name": "주문 확인",
+  "start_url": "/orders",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f5f3",
+  "theme_color": "#171917",
+  "description": "K-Beauty 모바일 주문 관리"
+}
