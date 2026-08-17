@@ -16,6 +16,7 @@ import WholesaleGuidePage from '@/pages/WholesaleGuidePage';
 import ContactPage from '@/pages/ContactPage';
 import PolicyPage from '@/pages/PolicyPage';
 import AdminPage from '@/pages/AdminPage';
+import MobileOrdersPage from '@/pages/MobileOrdersPage';
 
 function RootRedirect() {
   const location = useLocation();
@@ -49,9 +50,14 @@ export default function App() {
 function AppContent() {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
+  const isMobileOrders = location.pathname.startsWith('/orders');
 
   if (isAdmin) {
     return <Routes><Route path="/admin/*" element={<AdminPage />} /></Routes>;
+  }
+
+  if (isMobileOrders) {
+    return <Routes><Route path="/orders/*" element={<MobileOrdersPage />} /></Routes>;
   }
 
   return (
