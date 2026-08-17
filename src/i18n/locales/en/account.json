@@ -1,0 +1,17 @@
+{
+  "seo": { "title": "Member Account", "description": "Membership for K-Beauty customers and professionals" },
+  "loading": "Loading your account...", "submitting": "Processing...",
+  "errors": { "notConfigured": "Supabase must be configured to use membership features.", "generic": "We could not process your request." },
+  "signin": { "title": "Sign in", "subtitle": "Sign in to access your member account.", "submit": "Sign in", "switch": "New here? Create an account" },
+  "signup": { "title": "Create account", "subtitle": "Choose the membership type that fits your work.", "purpose": "Joining as", "submit": "Create account", "switch": "Already have an account? Sign in" },
+  "fields": { "email": "Email", "password": "Password (8+ characters)", "shopName": "Shop name", "companyName": "Company name", "businessType": "Business type", "country": "Country", "city": "City", "distributionFocus": "Distribution focus", "sns": "Social profile", "website": "Website", "purchaseScale": "Expected purchase scale" },
+  "types": {
+    "consumer": { "label": "Customer", "description": "Browse products and request advice.", "memberLabel": "Consumer Member" },
+    "professional": { "label": "Beauty professional", "description": "Salons, artists and beauty schools.", "memberLabel": "Professional Member" },
+    "distributor": { "label": "Distributor", "description": "Importers, wholesalers and distributors.", "memberLabel": "Distributor Member" }
+  },
+  "business": { "title": "Business information" },
+  "businessTypes": { "beauty_salon": "Beauty salon", "lash_studio": "Lash studio", "pmu_artist": "PMU artist", "waxing_shop": "Waxing shop", "beauty_school": "Beauty school", "distributor": "Distributor", "importer": "Importer", "wholesaler": "Wholesaler" },
+  "mypage": { "eyebrow": "MY PAGE", "logout": "Sign out", "verification": "Business verification", "verified": "Verified", "pending": "Pending", "consumerMessage": "You are registered as a consumer member." },
+  "confirmation": { "title": "Check your email", "body": "We sent you a confirmation link. Confirm your email, then sign in.", "back": "Back to sign in" }
+}

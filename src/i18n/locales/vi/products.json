@@ -37,7 +37,9 @@
     "usage": "Hướng dẫn sử dụng",
     "ingredients": "Thông số sản phẩm",
     "relatedProducts": "Sản phẩm liên quan",
-    "moqUnit": "sản phẩm"
+    "moqUnit": "sản phẩm",
+    "professional": { "title": "Thông tin chuyên nghiệp", "category": "Danh mục chuyên nghiệp", "moq": "MOQ chuyên nghiệp", "oem": "OEM", "sample": "Mẫu thử", "countries": "Quốc gia xuất khẩu", "available": "Có sẵn" },
+    "packages": { "eyebrow": "GÓI CHUYÊN NGHIỆP", "title": "Gói sản phẩm có chứa sản phẩm này", "products": "sản phẩm", "view": "Xem gói" }
   },
   "categories": {
     "pmu-machines-needles": "Máy & kim phun xăm",

@@ -5,15 +5,19 @@ import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import ProductCard from '@/components/ProductCard';
 import ZaloButton from '@/components/ZaloButton';
-import { getProductBySlug, getRelatedProducts, getLocalizedProduct } from '@/data/products';
+import { getLocalizedProduct, hasProfessionalInformation, type Product } from '@/data/products';
 import { useLanguage } from '@/utils/routing';
 import { contactConfig } from '@/config/contact';
+import { useProducts } from '@/context/product-context';
+import { usePackages } from '@/context/package-context';
 
 export default function ProductDetailPage() {
   const { t } = useTranslation(['common', 'products', 'footer']);
   const lang = useLanguage();
   const { slug } = useParams<{ slug: string }>();
-  const product = slug ? getProductBySlug(slug) : undefined;
+  const { products } = useProducts();
+  const { packages } = usePackages();
+  const product = slug ? products.find((item) => item.slug === slug) : undefined;
   const [activeImage, setActiveImage] = useState(0);
 
   if (!product) {
@@ -27,7 +31,8 @@ export default function ProductDetailPage() {
 
   const p = getLocalizedProduct(product, lang);
   const categoryLabel = t(`products:categories.${product.category}`);
-  const related = getRelatedProducts(product, 4);
+  const related = products.filter((candidate) => candidate.category === product.category && candidate.id !== product.id).slice(0, 4);
+  const relatedPackages = packages.filter((item) => item.items.some((packageItem) => packageItem.product.id === product.id));
 
   return (
     <div className="pb-24 lg:pb-12">
@@ -103,6 +108,8 @@ export default function ProductDetailPage() {
               <SpecItem icon={Globe} label={t('products:detail.specs.origin')} value={product.countryOfOrigin} />
               <SpecItem icon={Check} label={t('products:detail.specs.moq')} value={`${product.moq} ${t('products:detail.moqUnit')}`} />
             </div>
+
+            {hasProfessionalInformation(product) ? <ProfessionalInformation product={product} /> : null}
 
             {product.options.length > 0 && (
               <div className="mt-6 rounded-2xl border border-rose-100 bg-white p-5">
@@ -195,6 +202,8 @@ export default function ProductDetailPage() {
           </section>
         )}
 
+        {relatedPackages.length ? <section className="mt-12"><p className="section-eyebrow">{t('products:detail.packages.eyebrow')}</p><h2 className="mt-2 text-2xl font-semibold">{t('products:detail.packages.title')}</h2><div className="mt-5 grid gap-4 sm:grid-cols-2">{relatedPackages.map((item) => { const packageName = lang === 'vi' ? item.nameVi ?? item.nameKo : lang === 'en' ? item.nameEn ?? item.nameKo : item.nameKo; return <article key={item.id} className="rounded-2xl border border-rose-100 bg-white p-5"><h3 className="font-semibold">{packageName}</h3><p className="mt-2 text-sm text-black/45">{item.items.length} {t('products:detail.packages.products')}</p><Link to={`/${lang}/packages/${item.slug}`} className="mt-4 inline-flex text-sm font-medium text-rose-600">{t('products:detail.packages.view')}</Link></article>; })}</div></section> : null}
+
         {/* Related products */}
         {related.length > 0 && (
           <div className="mt-12">
@@ -267,4 +276,17 @@ function DetailCard({ title, icon: Icon, children }: { title: string; icon: type
       {children}
     </div>
   );
+}
+
+function ProfessionalInformation({ product }: { product: Product }) {
+  const { t } = useTranslation('products');
+  const items = [
+    product.professionalCategory ? [t('detail.professional.category'), product.professionalCategory] : null,
+    product.minimumOrderQuantity != null ? [t('detail.professional.moq'), String(product.minimumOrderQuantity)] : null,
+    product.oemAvailable ? [t('detail.professional.oem'), t('detail.professional.available')] : null,
+    product.sampleAvailable ? [t('detail.professional.sample'), t('detail.professional.available')] : null,
+    product.recommendedCountries?.length || product.exportAvailable ? [t('detail.professional.countries'), product.recommendedCountries?.length ? product.recommendedCountries.join(', ') : t('detail.professional.available')] : null,
+  ].filter((item): item is string[] => item !== null);
+
+  return <section className="mt-6 rounded-2xl border border-rose-100 bg-rose-50/50 p-5"><p className="text-xs font-medium uppercase tracking-wider text-rose-500">{t('detail.professional.title')}</p>{items.length ? <dl className="mt-3 grid gap-3 sm:grid-cols-2">{items.map(([label, value]) => <div key={label}><dt className="text-xs text-charcoal-700/40">{label}</dt><dd className="mt-1 text-sm font-medium text-charcoal-800">{value}</dd></div>)}</dl> : null}{product.professionalDescription ? <p className="mt-4 border-t border-rose-100 pt-4 text-sm leading-6 text-charcoal-700/70">{product.professionalDescription}</p> : null}</section>;
 }

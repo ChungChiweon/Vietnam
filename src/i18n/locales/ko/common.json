@@ -14,7 +14,8 @@
     "bestSellers": "베스트셀러",
     "wholesaleGuide": "도매 안내",
     "contact": "문의",
-    "allProducts": "전체 상품"
+    "allProducts": "전체 상품",
+    "account": "회원 계정"
   },
   "actions": {
     "viewProducts": "상품 보기",

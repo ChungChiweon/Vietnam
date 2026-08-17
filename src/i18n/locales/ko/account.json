@@ -1,0 +1,17 @@
+{
+  "seo": { "title": "회원 계정", "description": "일반 고객과 K-뷰티 전문가를 위한 회원 계정" },
+  "loading": "회원 정보를 불러오는 중...", "submitting": "처리 중...",
+  "errors": { "notConfigured": "Supabase 환경 설정 후 회원 기능을 사용할 수 있습니다.", "generic": "요청을 처리하지 못했습니다." },
+  "signin": { "title": "로그인", "subtitle": "회원 계정으로 서비스를 이용하세요.", "submit": "로그인", "switch": "처음이신가요? 회원가입" },
+  "signup": { "title": "회원가입", "subtitle": "이용 목적에 맞는 회원 유형을 선택하세요.", "purpose": "가입 목적", "submit": "가입하기", "switch": "이미 계정이 있나요? 로그인" },
+  "fields": { "email": "이메일", "password": "비밀번호 (8자 이상)", "shopName": "샵 이름", "companyName": "회사명", "businessType": "업종", "country": "국가", "city": "도시", "distributionFocus": "유통 분야", "sns": "SNS 주소", "website": "웹사이트", "purchaseScale": "예상 구매 규모" },
+  "types": {
+    "consumer": { "label": "일반 고객", "description": "제품을 둘러보고 상담합니다.", "memberLabel": "일반 회원" },
+    "professional": { "label": "뷰티 전문가", "description": "샵·아티스트·교육기관 회원입니다.", "memberLabel": "Professional Member" },
+    "distributor": { "label": "도매/유통 사업자", "description": "수입·도매·유통사 회원입니다.", "memberLabel": "Distributor Member" }
+  },
+  "business": { "title": "사업자 추가 정보" },
+  "businessTypes": { "beauty_salon": "뷰티샵", "lash_studio": "속눈썹샵", "pmu_artist": "반영구 아티스트", "waxing_shop": "왁싱샵", "beauty_school": "뷰티 교육기관", "distributor": "유통사", "importer": "수입업자", "wholesaler": "도매업자" },
+  "mypage": { "eyebrow": "MY PAGE", "logout": "로그아웃", "verification": "사업자 확인", "verified": "확인 완료", "pending": "확인 대기", "consumerMessage": "현재 일반 회원으로 등록되어 있습니다." },
+  "confirmation": { "title": "이메일을 확인해 주세요", "body": "가입 확인 링크를 이메일로 보냈습니다. 확인 후 로그인할 수 있습니다.", "back": "로그인으로 돌아가기" }
+}

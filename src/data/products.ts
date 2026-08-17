@@ -44,6 +44,18 @@ export interface Product {
   isNewArrival: boolean;
   rating: number;
   reviewCount: number;
+  professionalCategory?: string | null;
+  businessTypes?: string[] | null;
+  minimumOrderQuantity?: number | null;
+  bulkAvailable?: boolean;
+  oemAvailable?: boolean;
+  sampleAvailable?: boolean;
+  exportAvailable?: boolean;
+  recommendedCountries?: string[] | null;
+  marketingTags?: string[] | null;
+  professionalDescription?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
   translations: Record<LanguageCode, ProductTranslation>;
 }
 
@@ -154,3 +166,16 @@ export const getNewArrivals = () => products.filter((product) => product.isNewAr
 export const getProductBySlug = (slug: string) => products.find((product) => product.slug === slug);
 export const getRelatedProducts = (product: Product, count = 4) =>
   products.filter((candidate) => candidate.category === product.category && candidate.id !== product.id).slice(0, count);
+
+export function hasProfessionalInformation(product: Product) {
+  return Boolean(
+    product.professionalCategory ||
+    product.minimumOrderQuantity != null ||
+    product.bulkAvailable ||
+    product.oemAvailable ||
+    product.sampleAvailable ||
+    product.exportAvailable ||
+    product.recommendedCountries?.length ||
+    product.professionalDescription
+  );
+}

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Bell, Check, ChevronRight, Clipboard, LogOut, PackageCheck, Phone, RefreshCw, Search, Truck, UserRound, X } from 'lucide-react';
 import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import { listOrders, updateOrderStatus, type OrderRecord, type OrderStatus } from '@/lib/orders';
+import { isAdminUser } from '@/lib/auth';
 
 const statusOptions: Array<{ value: OrderStatus; label: string; icon: typeof Check }> = [
   { value: 'new', label: '신규', icon: Bell },
@@ -20,7 +21,7 @@ const statusStyles: Record<OrderStatus, string> = {
 };
 
 export default function MobileOrdersPage() {
-  const [authenticated, setAuthenticated] = useState(!isSupabaseConfigured);
+  const [authState, setAuthState] = useState<'loading' | 'signedOut' | 'forbidden' | 'authorized'>(isSupabaseConfigured ? 'loading' : 'authorized');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -40,19 +41,24 @@ export default function MobileOrdersPage() {
 
   useEffect(() => {
     if (!supabase) return;
-    void supabase.auth.getSession().then(({ data }) => setAuthenticated(Boolean(data.session)));
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => setAuthenticated(Boolean(session)));
+    const authorize = async (user: Parameters<typeof isAdminUser>[0] | null) => setAuthState(user ? await isAdminUser(user) ? 'authorized' : 'forbidden' : 'signedOut');
+    void supabase.auth.getUser().then(({ data }) => authorize(data.user));
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => { void authorize(session?.user ?? null); });
     return () => data.subscription.unsubscribe();
   }, []);
 
   const login = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!supabase) return setAuthenticated(true);
+    if (!supabase) return setAuthState('authorized');
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoginError(error?.message ?? '');
   };
 
-  if (!authenticated) {
+  if (authState === 'loading') return <div className="flex min-h-[100dvh] items-center justify-center bg-[#f4f5f3] text-sm text-black/40">권한을 확인하는 중...</div>;
+
+  if (authState === 'forbidden') return <div className="flex min-h-[100dvh] items-center justify-center bg-[#f4f5f3] px-5"><div className="w-full max-w-sm rounded-[28px] bg-white p-6 text-center shadow-xl shadow-black/5"><h1 className="text-xl font-semibold">관리자 권한이 없습니다</h1><p className="mt-2 text-sm text-black/45">주문 내역은 관리자만 확인할 수 있습니다.</p><button onClick={() => void supabase?.auth.signOut()} className="mt-6 w-full rounded-2xl bg-[#171917] py-3.5 text-sm text-white">다른 계정으로 로그인</button></div></div>;
+
+  if (authState === 'signedOut') {
     return (
       <div className="flex min-h-[100dvh] items-center justify-center bg-[#f4f5f3] px-5">
         <form onSubmit={login} className="w-full max-w-sm rounded-[28px] bg-white p-6 shadow-xl shadow-black/5">

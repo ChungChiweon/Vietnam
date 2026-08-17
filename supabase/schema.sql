@@ -1,5 +1,14 @@
 create extension if not exists "pgcrypto";
 
+-- Customer/member tables are installed by:
+-- supabase/migrations/202608180001_member_types.sql
+-- Professional product fields are installed by:
+-- supabase/migrations/202608180002_professional_product_schema.sql
+-- Product Hub core fields are installed by:
+-- supabase/migrations/202608180003_product_hub.sql
+-- Package Engine is installed by:
+-- supabase/migrations/202608180004_product_package_engine.sql
+
 create table if not exists public.orders (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
@@ -22,4 +31,3 @@ alter table public.orders enable row level security;
 create policy "public can create orders" on public.orders for insert to anon with check (true);
 create policy "authenticated admins can read orders" on public.orders for select to authenticated using (true);
 create policy "authenticated admins can update orders" on public.orders for update to authenticated using (true) with check (true);
-

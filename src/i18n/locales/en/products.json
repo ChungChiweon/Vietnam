@@ -37,7 +37,9 @@
     "usage": "How to Use",
     "ingredients": "Key Ingredients",
     "relatedProducts": "Related Products",
-    "moqUnit": "units"
+    "moqUnit": "units",
+    "professional": { "title": "Professional Information", "category": "Professional category", "moq": "Professional MOQ", "oem": "OEM", "sample": "Samples", "countries": "Export countries", "available": "Available" },
+    "packages": { "eyebrow": "PROFESSIONAL PACKAGE", "title": "Packages containing this product", "products": "products", "view": "View Package" }
   },
   "categories": {
     "skincare": "Skincare",

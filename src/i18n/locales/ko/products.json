@@ -37,7 +37,9 @@
     "usage": "사용 방법",
     "ingredients": "주요 성분",
     "relatedProducts": "관련 상품",
-    "moqUnit": "개"
+    "moqUnit": "개",
+    "professional": { "title": "Professional Information", "category": "전문가용 카테고리", "moq": "전문가 MOQ", "oem": "OEM", "sample": "샘플", "countries": "수출 가능 국가", "available": "가능" },
+    "packages": { "eyebrow": "PROFESSIONAL PACKAGE", "title": "이 상품이 포함된 패키지", "products": "개 구성 상품", "view": "패키지 보기" }
   },
   "categories": {
     "skincare": "스킨케어",

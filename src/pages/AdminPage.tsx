@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bell, Box, CalendarClock, ChevronRight, Clipboard, ExternalLink, LayoutDashboard, LogOut, Menu, PackageSearch, RefreshCw, Search, Settings, ShoppingBag, UserRound, X } from 'lucide-react';
-import { products } from '@/data/products';
+import { Bell, Box, Boxes, CalendarClock, ChevronRight, Clipboard, ExternalLink, LayoutDashboard, LogOut, Menu, PackageSearch, RefreshCw, Search, Settings, ShoppingBag, UserRound, X } from 'lucide-react';
+import { useProducts } from '@/context/product-context';
 import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import { listOrders, updateOrderStatus, type OrderRecord, type OrderStatus } from '@/lib/orders';
+import { isAdminUser } from '@/lib/auth';
+import ProfessionalProductSettings from '@/components/admin/ProfessionalProductSettings';
+import PackageManagement from '@/components/admin/PackageManagement';
 
-type View = 'orders' | 'products' | 'sync';
+type View = 'orders' | 'products' | 'packages' | 'sync';
 
 const statusMeta: Record<OrderStatus, { label: string; className: string }> = {
   new: { label: '신규', className: 'bg-rose-100 text-rose-700' },
@@ -16,25 +19,29 @@ const statusMeta: Record<OrderStatus, { label: string; className: string }> = {
 };
 
 export default function AdminPage() {
-  const [authenticated, setAuthenticated] = useState(!isSupabaseConfigured);
+  const [authState, setAuthState] = useState<'loading' | 'signedOut' | 'forbidden' | 'authorized'>(isSupabaseConfigured ? 'loading' : 'authorized');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
 
   useEffect(() => {
     if (!supabase) return;
-    supabase.auth.getSession().then(({ data }) => setAuthenticated(Boolean(data.session)));
-    return supabase.auth.onAuthStateChange((_event, session) => setAuthenticated(Boolean(session))).data.subscription.unsubscribe;
+    const authorize = async (user: Parameters<typeof isAdminUser>[0] | null) => setAuthState(user ? await isAdminUser(user) ? 'authorized' : 'forbidden' : 'signedOut');
+    void supabase.auth.getUser().then(({ data }) => authorize(data.user));
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => { void authorize(session?.user ?? null); });
+    return () => data.subscription.unsubscribe();
   }, []);
 
   const login = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!supabase) return setAuthenticated(true);
+    if (!supabase) return setAuthState('authorized');
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoginError(error?.message ?? '');
   };
 
-  if (!authenticated) return <AdminLogin email={email} password={password} error={loginError} onEmail={setEmail} onPassword={setPassword} onSubmit={login} />;
+  if (authState === 'loading') return <div className="flex min-h-screen items-center justify-center bg-[#f7f7f5] text-sm text-black/40">권한을 확인하는 중...</div>;
+  if (authState === 'forbidden') return <div className="flex min-h-screen items-center justify-center bg-[#f7f7f5] px-4"><div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center shadow-xl shadow-black/5"><h1 className="text-xl font-semibold">관리자 권한이 없습니다</h1><p className="mt-2 text-sm text-black/45">일반 회원 계정으로는 관리 센터에 접근할 수 없습니다.</p><button onClick={() => void supabase?.auth.signOut()} className="mt-6 w-full rounded-xl bg-charcoal-800 px-4 py-3 text-sm text-white">다른 계정으로 로그인</button></div></div>;
+  if (authState === 'signedOut') return <AdminLogin email={email} password={password} error={loginError} onEmail={setEmail} onPassword={setPassword} onSubmit={login} />;
   return <AdminDashboard onLogout={() => supabase?.auth.signOut()} />;
 }
 
@@ -85,6 +92,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
         <nav className="mt-10 space-y-2">
           <SideButton active={view === 'orders'} icon={LayoutDashboard} label="주문 관리" count={newCount} onClick={() => setView('orders')} />
           <SideButton active={view === 'products'} icon={ShoppingBag} label="상품 관리" onClick={() => setView('products')} />
+          <SideButton active={view === 'packages'} icon={Boxes} label="패키지 관리" onClick={() => setView('packages')} />
           <SideButton active={view === 'sync'} icon={RefreshCw} label="주간 업데이트" onClick={() => setView('sync')} />
         </nav>
         <div className="absolute bottom-5 left-5 right-5 space-y-2 border-t border-white/10 pt-4">
@@ -96,12 +104,13 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
       <div className="lg:pl-64">
         <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-black/5 bg-white/90 px-4 backdrop-blur lg:px-8">
           <button onClick={() => setMenuOpen(true)} className="lg:hidden"><Menu /></button>
-          <div><p className="text-sm font-semibold">{view === 'orders' ? '주문 관리' : view === 'products' ? '상품 관리' : '주간 업데이트'}</p><p className="text-xs text-charcoal-700/40">{isSupabaseConfigured ? '실시간 데이터 연결됨' : '데모 모드 · Supabase 연결 전'}</p></div>
+          <div><p className="text-sm font-semibold">{view === 'orders' ? '주문 관리' : view === 'products' ? '상품 관리' : view === 'packages' ? '패키지 관리' : '주간 업데이트'}</p><p className="text-xs text-charcoal-700/40">{isSupabaseConfigured ? '실시간 데이터 연결됨' : '데모 모드 · Supabase 연결 전'}</p></div>
           <button className="relative rounded-xl border border-black/5 bg-white p-2.5"><Bell className="h-5 w-5" />{newCount > 0 && <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] text-white">{newCount}</span>}</button>
         </header>
         <main className="p-4 lg:p-8">
           {view === 'orders' && <OrdersView orders={filtered} loading={loading} newCount={newCount} todayCount={todayCount} search={search} onSearch={setSearch} onSelect={setSelected} onRefresh={load} />}
           {view === 'products' && <ProductsView />}
+          {view === 'packages' && <PackageManagement />}
           {view === 'sync' && <SyncView />}
         </main>
       </div>
@@ -136,8 +145,9 @@ function OrderDrawer({ order, onClose, onStatus }: { order: OrderRecord; onClose
 function Detail({ label, value }: { label: string; value: string }) { return <div><p className="text-xs text-black/40">{label}</p><p className="mt-1 whitespace-pre-wrap text-sm font-medium">{value}</p></div>; }
 
 function ProductsView() {
+  const { products, source } = useProducts();
   const categories = new Set(products.map((product) => product.category)).size;
-  return <div className="mx-auto max-w-6xl"><div className="grid gap-3 sm:grid-cols-3"><Metric label="등록 상품" value={products.length} icon={ShoppingBag} /><Metric label="카테고리" value={categories} icon={Box} /><Metric label="업데이트 대기" value={0} icon={PackageSearch} /></div><div className="mt-6 rounded-2xl border border-black/5 bg-white p-6"><div className="flex items-center justify-between"><div><h2 className="font-sans text-lg font-semibold">상품 카탈로그</h2><p className="mt-1 text-sm text-black/40">JL Medicos에서 가져온 상품을 관리합니다.</p></div><Link to="/ko/products" className="rounded-xl border border-black/10 px-4 py-2 text-sm">상품 보기</Link></div></div></div>;
+  return <div className="mx-auto max-w-6xl"><div className="grid gap-3 sm:grid-cols-3"><Metric label="등록 상품" value={products.length} icon={ShoppingBag} /><Metric label="카테고리" value={categories} icon={Box} /><Metric label="업데이트 대기" value={0} icon={PackageSearch} /></div><div className="mt-6 rounded-2xl border border-black/5 bg-white p-6"><div className="flex items-center justify-between"><div><h2 className="font-sans text-lg font-semibold">상품 카탈로그</h2><p className="mt-1 text-sm text-black/40">데이터 소스: {source === 'supabase' ? 'Supabase Product Hub' : '정적 fallback 카탈로그'}</p></div><Link to="/ko/products" className="rounded-xl border border-black/10 px-4 py-2 text-sm">상품 보기</Link></div></div><ProfessionalProductSettings key={source} products={products} /></div>;
 }
 
 function SyncView() {

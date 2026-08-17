@@ -1,0 +1,17 @@
+{
+  "seo": { "title": "Tài khoản thành viên", "description": "Tài khoản dành cho khách hàng và chuyên gia K-Beauty" },
+  "loading": "Đang tải thông tin...", "submitting": "Đang xử lý...",
+  "errors": { "notConfigured": "Cần cấu hình Supabase để sử dụng tính năng thành viên.", "generic": "Không thể xử lý yêu cầu." },
+  "signin": { "title": "Đăng nhập", "subtitle": "Đăng nhập để sử dụng dịch vụ.", "submit": "Đăng nhập", "switch": "Chưa có tài khoản? Đăng ký" },
+  "signup": { "title": "Đăng ký", "subtitle": "Chọn loại thành viên phù hợp.", "purpose": "Mục đích đăng ký", "submit": "Đăng ký", "switch": "Đã có tài khoản? Đăng nhập" },
+  "fields": { "email": "Email", "password": "Mật khẩu (ít nhất 8 ký tự)", "shopName": "Tên cửa hàng", "companyName": "Tên công ty", "businessType": "Loại hình kinh doanh", "country": "Quốc gia", "city": "Thành phố", "distributionFocus": "Lĩnh vực phân phối", "sns": "Địa chỉ mạng xã hội", "website": "Website", "purchaseScale": "Quy mô mua dự kiến" },
+  "types": {
+    "consumer": { "label": "Khách hàng", "description": "Xem sản phẩm và nhận tư vấn.", "memberLabel": "Thành viên thường" },
+    "professional": { "label": "Chuyên gia làm đẹp", "description": "Salon, nghệ sĩ và học viện.", "memberLabel": "Professional Member" },
+    "distributor": { "label": "Nhà phân phối", "description": "Nhà nhập khẩu, bán buôn và phân phối.", "memberLabel": "Distributor Member" }
+  },
+  "business": { "title": "Thông tin doanh nghiệp" },
+  "businessTypes": { "beauty_salon": "Salon làm đẹp", "lash_studio": "Studio nối mi", "pmu_artist": "Nghệ sĩ phun xăm", "waxing_shop": "Cửa hàng waxing", "beauty_school": "Học viện làm đẹp", "distributor": "Nhà phân phối", "importer": "Nhà nhập khẩu", "wholesaler": "Nhà bán buôn" },
+  "mypage": { "eyebrow": "TÀI KHOẢN", "logout": "Đăng xuất", "verification": "Xác minh doanh nghiệp", "verified": "Đã xác minh", "pending": "Đang chờ", "consumerMessage": "Bạn đang là thành viên thường." },
+  "confirmation": { "title": "Vui lòng kiểm tra email", "body": "Chúng tôi đã gửi liên kết xác nhận. Sau khi xác nhận, bạn có thể đăng nhập.", "back": "Quay lại đăng nhập" }
+}

@@ -18,6 +18,8 @@ import PolicyPage from '@/pages/PolicyPage';
 import AdminPage from '@/pages/AdminPage';
 import MobileOrdersPage from '@/pages/MobileOrdersPage';
 import SkinAnalysisPage from '@/pages/SkinAnalysisPage';
+import AccountPage from '@/pages/AccountPage';
+import PackageDetailPage from '@/pages/PackageDetailPage';
 
 function RootRedirect() {
   const location = useLocation();
@@ -74,6 +76,8 @@ function AppContent() {
             <Route path="/:lang/products" element={<CatalogPage />} />
             <Route path="/:lang/products/:slug" element={<ProductDetailPage />} />
             <Route path="/:lang/skin-check" element={<SkinAnalysisPage />} />
+            <Route path="/:lang/account" element={<AccountPage />} />
+            <Route path="/:lang/packages/:slug" element={<PackageDetailPage />} />
             <Route path="/:lang/inquiry" element={<InquiryPage />} />
             <Route path="/:lang/wholesale-guide" element={<WholesaleGuidePage />} />
             <Route path="/:lang/contact" element={<ContactPage />} />

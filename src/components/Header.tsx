@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight, Search, ScanFace } from 'lucide-react';
+import { Menu, X, ChevronRight, Search, ScanFace, UserRound } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
 import ZaloButton from './ZaloButton';
@@ -126,6 +126,10 @@ export default function Header() {
 
               <LanguageSwitcher variant="desktop" />
 
+              <Link to={`/${lang}/account`} aria-label={t('common:menu.account')} className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal-700 transition-colors hover:bg-rose-50 hover:text-rose-600">
+                <UserRound className="h-5 w-5" strokeWidth={1.8} />
+              </Link>
+
               <ZaloButton variant="compact" className="hidden sm:inline-flex" />
             </div>
           </div>
@@ -203,6 +207,7 @@ export default function Header() {
               </div>
 
               <div className="mt-6 space-y-3">
+                <Link to={`/${lang}/account`} className="btn-secondary w-full"><UserRound className="h-4 w-4" />{t('common:menu.account')}</Link>
                 <ZaloButton className="w-full" />
                 <Link to={`/${lang}/inquiry`} className="btn-primary w-full">
                   {t('common:actions.requestQuote')}

@@ -7,7 +7,7 @@ import ProductSection from '@/components/home/ProductSection';
 import Process from '@/components/home/Process';
 import Trust from '@/components/home/Trust';
 import CTASection from '@/components/home/CTASection';
-import { getBestSellers, getNewArrivals } from '@/data/products';
+import { useProducts } from '@/context/product-context';
 import { useLanguage } from '@/utils/routing';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ScanFace, ShieldCheck, Sparkles } from 'lucide-react';
@@ -15,8 +15,9 @@ import { ArrowRight, ScanFace, ShieldCheck, Sparkles } from 'lucide-react';
 export default function HomePage() {
   const { t } = useTranslation(['home', 'footer']);
   const lang = useLanguage();
-  const bestSellers = getBestSellers();
-  const newArrivals = getNewArrivals();
+  const { products } = useProducts();
+  const bestSellers = products.filter((product) => product.isBestSeller);
+  const newArrivals = products.filter((product) => product.isNewArrival);
 
   return (
     <>

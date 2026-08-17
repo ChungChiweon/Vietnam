@@ -4,15 +4,17 @@ import { Search, SlidersHorizontal, X, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import ProductCard from '@/components/ProductCard';
-import { products, categories, brands } from '@/data/products';
+import { categories, brands } from '@/data/products';
 import type { CategoryId } from '@/data/products';
 import { useLanguage } from '@/utils/routing';
+import { useProducts } from '@/context/product-context';
 
 type SortOption = 'newest' | 'popular' | 'name';
 
 const ITEMS_PER_PAGE = 8;
 
 export default function CatalogPage() {
+  const { products } = useProducts();
   const { t } = useTranslation(['common', 'products', 'footer']);
   const lang = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -83,7 +85,7 @@ export default function CatalogPage() {
     }
 
     return result;
-  }, [searchQuery, selectedCategory, selectedBrand, selectedMoq, sortBy, filterParam, lang]);
+  }, [products, searchQuery, selectedCategory, selectedBrand, selectedMoq, sortBy, filterParam, lang]);
 
   const visibleProducts = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
