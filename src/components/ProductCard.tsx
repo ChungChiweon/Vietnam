@@ -15,7 +15,6 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
   const { t } = useTranslation(['common', 'products']);
   const lang = useLanguage();
   const p = getLocalizedProduct(product, lang);
-  const categoryLabel = t(`products:categories.${product.category}`);
 
   return (
     <div className={`card group flex flex-col overflow-hidden hover:shadow-card hover:-translate-y-1 ${className}`}>

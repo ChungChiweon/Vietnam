@@ -13,7 +13,7 @@ type SortOption = 'newest' | 'popular' | 'name';
 const ITEMS_PER_PAGE = 8;
 
 export default function CatalogPage() {
-  const { t, i18n } = useTranslation(['common', 'products', 'footer']);
+  const { t } = useTranslation(['common', 'products', 'footer']);
   const lang = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') ?? '');

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '@/utils/routing';
 import ProductCard from '@/components/ProductCard';
 import type { Product } from '@/data/products';
 
@@ -14,7 +13,6 @@ interface ProductSectionProps {
 
 export default function ProductSection({ title, eyebrow, products: items, viewAllTo }: ProductSectionProps) {
   const { t } = useTranslation('common');
-  const lang = useLanguage();
 
   return (
     <section className="py-12 sm:py-16 lg:py-20">
