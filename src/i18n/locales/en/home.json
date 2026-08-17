@@ -11,6 +11,7 @@
       "experience": "Export Experience"
     }
   },
+  "skinCheck": { "eyebrow": "30-second personal check", "title": "Find a routine that fits your skin", "description": "Get ingredient and routine guidance from photo quality checks and a short questionnaire.", "photo": "Photo quality check", "privacy": "Photos are not stored", "cta": "Start free" },
   "benefits": {
     "eyebrow": "Wholesale Benefits",
     "title": "Why Choose K-Beauty Wholesale?",

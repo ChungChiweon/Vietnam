@@ -9,6 +9,7 @@ import koWholesale from './locales/ko/wholesale.json';
 import koContact from './locales/ko/contact.json';
 import koPolicies from './locales/ko/policies.json';
 import koFooter from './locales/ko/footer.json';
+import koSkinCheck from './locales/ko/skinCheck.json';
 
 import viCommon from './locales/vi/common.json';
 import viHome from './locales/vi/home.json';
@@ -17,6 +18,7 @@ import viWholesale from './locales/vi/wholesale.json';
 import viContact from './locales/vi/contact.json';
 import viPolicies from './locales/vi/policies.json';
 import viFooter from './locales/vi/footer.json';
+import viSkinCheck from './locales/vi/skinCheck.json';
 
 import enCommon from './locales/en/common.json';
 import enHome from './locales/en/home.json';
@@ -25,6 +27,7 @@ import enWholesale from './locales/en/wholesale.json';
 import enContact from './locales/en/contact.json';
 import enPolicies from './locales/en/policies.json';
 import enFooter from './locales/en/footer.json';
+import enSkinCheck from './locales/en/skinCheck.json';
 
 export const resources = {
   ko: {
@@ -35,6 +38,7 @@ export const resources = {
     contact: koContact,
     policies: koPolicies,
     footer: koFooter,
+    skinCheck: koSkinCheck,
   },
   vi: {
     common: viCommon,
@@ -44,6 +48,7 @@ export const resources = {
     contact: viContact,
     policies: viPolicies,
     footer: viFooter,
+    skinCheck: viSkinCheck,
   },
   en: {
     common: enCommon,
@@ -53,11 +58,12 @@ export const resources = {
     contact: enContact,
     policies: enPolicies,
     footer: enFooter,
+    skinCheck: enSkinCheck,
   },
 } as const;
 
 export const defaultNS = 'common';
-export const supportedNS = ['common', 'home', 'products', 'wholesale', 'contact', 'policies', 'footer'];
+export const supportedNS = ['common', 'home', 'products', 'wholesale', 'contact', 'policies', 'footer', 'skinCheck'];
 
 i18n
   .use(LanguageDetector)
