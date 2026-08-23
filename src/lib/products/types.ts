@@ -26,6 +26,13 @@ export interface ProductRow {
   benefit_tags?: unknown;
   skin_concern_tags?: unknown;
   skin_type_tags?: unknown;
+  inci_ingredients?: unknown;
+  normalized_ingredients?: unknown;
+  caution_tags?: unknown;
+  derived_benefit_tags?: unknown;
+  verification_status?: string | null;
+  verification_source?: string | null;
+  verified_at?: string | null;
   professional_description: string | null;
   created_at: string;
   updated_at: string;

@@ -57,6 +57,13 @@ export interface Product {
   benefitTags?: string[] | null;
   skinConcernTags?: string[] | null;
   skinTypeTags?: string[] | null;
+  inciIngredients?: string[] | null;
+  normalizedIngredients?: string[] | null;
+  cautionTags?: string[] | null;
+  derivedBenefitTags?: string[] | null;
+  verificationStatus?: 'unverified' | 'label_verified' | 'brand_verified' | 'admin_verified' | null;
+  verificationSource?: string | null;
+  verifiedAt?: string | null;
   professionalDescription?: string | null;
   createdAt?: string;
   updatedAt?: string;

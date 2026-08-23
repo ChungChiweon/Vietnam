@@ -27,6 +27,7 @@ export interface ProductRecommendation {
   matchedNeeds: SkinNeedTag[];
   matchedBenefits: string[];
   matchedIngredients: string[];
+  recommendationReasons: Array<{ type: 'need' | 'benefit' | 'ingredient' | 'skin_type'; key: string }>;
 }
 
 export interface SkinRecommendationResult {

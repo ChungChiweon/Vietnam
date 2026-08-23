@@ -110,6 +110,7 @@ export default function ProductDetailPage() {
             </div>
 
             {hasProfessionalInformation(product) ? <ProfessionalInformation product={product} /> : null}
+            {product.verificationStatus && product.verificationStatus !== 'unverified' && (product.inciIngredients?.length || product.benefitTags?.length || product.skinTypeTags?.length || product.cautionTags?.length) ? <SkincareInformation product={product} lang={lang} /> : null}
 
             {product.options.length > 0 && (
               <div className="mt-6 rounded-2xl border border-rose-100 bg-white p-5">
@@ -289,4 +290,14 @@ function ProfessionalInformation({ product }: { product: Product }) {
   ].filter((item): item is string[] => item !== null);
 
   return <section className="mt-6 rounded-2xl border border-rose-100 bg-rose-50/50 p-5"><p className="text-xs font-medium uppercase tracking-wider text-rose-500">{t('detail.professional.title')}</p>{items.length ? <dl className="mt-3 grid gap-3 sm:grid-cols-2">{items.map(([label, value]) => <div key={label}><dt className="text-xs text-charcoal-700/40">{label}</dt><dd className="mt-1 text-sm font-medium text-charcoal-800">{value}</dd></div>)}</dl> : null}{product.professionalDescription ? <p className="mt-4 border-t border-rose-100 pt-4 text-sm leading-6 text-charcoal-700/70">{product.professionalDescription}</p> : null}</section>;
+}
+
+function SkincareInformation({ product, lang }: { product: Product; lang: 'ko' | 'vi' | 'en' }) {
+  const copy = {
+    ko: { title: '검증된 스킨케어 정보', ingredients: '주요 성분', benefits: '추천 관리 방향', types: '피부 타입', cautions: '주의 정보' },
+    vi: { title: 'Thông tin chăm sóc da đã xác minh', ingredients: 'Thành phần chính', benefits: 'Hướng chăm sóc', types: 'Loại da', cautions: 'Lưu ý' },
+    en: { title: 'Verified skincare information', ingredients: 'Key ingredients', benefits: 'Care directions', types: 'Skin types', cautions: 'Cautions' },
+  }[lang];
+  const rows = [[copy.ingredients, product.inciIngredients], [copy.benefits, [...(product.benefitTags ?? []), ...(product.derivedBenefitTags ?? [])]], [copy.types, product.skinTypeTags], [copy.cautions, product.cautionTags]] as const;
+  return <section className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50/40 p-5"><p className="text-xs font-medium uppercase tracking-wider text-emerald-700">{copy.title}</p><dl className="mt-3 space-y-3">{rows.filter(([, values]) => values?.length).map(([label, values]) => <div key={label}><dt className="text-xs text-charcoal-700/40">{label}</dt><dd className="mt-1 text-sm text-charcoal-800">{values?.join(', ')}</dd></div>)}</dl></section>;
 }

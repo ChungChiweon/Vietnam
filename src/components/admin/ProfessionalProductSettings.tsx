@@ -84,6 +84,8 @@ export default function ProfessionalProductSettings({ products }: { products: Pr
         </label>
       </div>
 
+      <section className="mt-5 rounded-xl bg-[#f5f6f4] p-4"><p className="text-xs font-medium uppercase tracking-[0.14em] text-rose-500">Skin Recommendation Data</p><dl className="mt-3 grid gap-3 text-sm sm:grid-cols-4"><div><dt className="text-black/40">INCI</dt><dd className="mt-1 font-medium">{selectedProduct.inciIngredients?.length ? 'complete' : 'missing'}</dd></div><div><dt className="text-black/40">Verification</dt><dd className="mt-1 font-medium">{selectedProduct.verificationStatus ?? 'unverified'}</dd></div><div><dt className="text-black/40">Benefit tags</dt><dd className="mt-1 font-medium">{(selectedProduct.benefitTags?.length ?? 0) + (selectedProduct.derivedBenefitTags?.length ?? 0)}</dd></div><div><dt className="text-black/40">Concern tags</dt><dd className="mt-1 font-medium">{selectedProduct.skinConcernTags?.length ?? 0}</dd></div></dl></section>
+
       <fieldset className="mt-5"><legend className="text-sm font-medium">추천 사업 유형</legend><div className="mt-2 flex flex-wrap gap-2">{availableBusinessTypes.map((type) => <label key={type} className="flex items-center gap-2 rounded-xl border border-black/10 px-3 py-2 text-xs"><input type="checkbox" checked={settings.businessTypes?.includes(type) ?? false} onChange={() => toggleBusinessType(type)} />{type}</label>)}</div></fieldset>
 
       <div className="mt-5 grid gap-2 sm:grid-cols-4">{([

@@ -13,6 +13,9 @@ const row: ProductRow = {
   professional_category: 'lash', business_types: ['lash_artist'], minimum_order_quantity: 12,
   bulk_available: true, oem_available: false, sample_available: true, export_available: true,
   recommended_countries: ['VN'], marketing_tags: ['professional'], professional_description: 'For trained professionals.',
+  ingredient_tags: ['panthenol'], benefit_tags: ['soothing'], skin_concern_tags: ['redness'], skin_type_tags: ['sensitive'],
+  inci_ingredients: ['Water', 'Panthenol'], normalized_ingredients: ['water', 'panthenol'], caution_tags: ['patch_test'], derived_benefit_tags: ['barrier'],
+  verification_status: 'label_verified', verification_source: 'product label', verified_at: '2026-08-23T00:00:00Z',
   created_at: '2026-08-18T00:00:00Z', updated_at: '2026-08-18T00:00:00Z',
 };
 
@@ -27,6 +30,8 @@ describe('Product Hub repository', () => {
     expect(product.translations.vi.name).toBe(row.name_vi);
     expect(product.professionalCategory).toBe('lash');
     expect(product.recommendedCountries).toEqual(['VN']);
+    expect(product.inciIngredients).toEqual(['Water', 'Panthenol']);
+    expect(product.verificationStatus).toBe('label_verified');
   });
 
   it('returns Supabase products when rows exist', async () => {

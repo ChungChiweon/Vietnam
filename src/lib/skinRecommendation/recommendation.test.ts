@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Product } from '@/data/products';
 import type { SkinMetric, SkinVisionResult } from '@/lib/skinVision';
 import { classifySkinMetrics } from './calibration';
-import { getRecommendedProducts, getSkinNeedTags } from './index';
+import { getRecommendedProducts, getSkinNeedTags, isProductEligibleForSkinRecommendation } from './index';
 
 const metrics = (value: number): Record<SkinMetric, number> => ({ redness: value, unevenTone: value, darkCircles: value, blemishes: value, texture: value, shine: value });
 const result = (overrides: Partial<SkinVisionResult> = {}): SkinVisionResult => ({
@@ -12,6 +12,7 @@ const result = (overrides: Partial<SkinVisionResult> = {}): SkinVisionResult => 
 const product = (id: string, tags: Partial<Product> = {}): Product => ({
   id, slug: id, brand: 'test', category: 'pmu-supplies', image: '', gallery: [], detailImages: [], options: [], sourceUrl: '', priceKrw: null,
   capacity: '', moq: 1, countryOfOrigin: 'KR', isBestSeller: false, isNewArrival: false, rating: 0, reviewCount: 0,
+  professionalCategory: 'skincare', verificationStatus: 'label_verified',
   translations: { ko: { name: id, originalName: id, summary: '', benefits: [], usage: '', ingredients: '', wholesaleInfo: '' }, vi: { name: id, originalName: id, summary: '', benefits: [], usage: '', ingredients: '', wholesaleInfo: '' }, en: { name: id, originalName: id, summary: '', benefits: [], usage: '', ingredients: '', wholesaleInfo: '' } }, ...tags,
 });
 
@@ -43,6 +44,13 @@ describe('skin calibration and recommendation', () => {
     expect(recommendation.products).toHaveLength(3);
     expect(recommendation.products[0].product.id).toBe('a');
     expect(recommendation.products[0].matchedIngredients).toContain('centella');
+    expect(recommendation.products[0].recommendationReasons).toEqual(expect.arrayContaining([{ type: 'need', key: 'soothing' }]));
+  });
+
+  it('excludes unverified and non-skincare products', () => {
+    expect(isProductEligibleForSkinRecommendation(product('unverified', { benefitTags: ['soothing'], verificationStatus: 'unverified' }))).toBe(false);
+    expect(isProductEligibleForSkinRecommendation(product('tool', { benefitTags: ['soothing'], professionalCategory: 'lash' }))).toBe(false);
+    expect(isProductEligibleForSkinRecommendation(product('verified', { benefitTags: ['soothing'] }))).toBe(true);
   });
 
   it('returns only eligible products and safely ignores missing ingredient data', () => {
