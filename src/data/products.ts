@@ -53,6 +53,10 @@ export interface Product {
   exportAvailable?: boolean;
   recommendedCountries?: string[] | null;
   marketingTags?: string[] | null;
+  ingredientTags?: string[] | null;
+  benefitTags?: string[] | null;
+  skinConcernTags?: string[] | null;
+  skinTypeTags?: string[] | null;
   professionalDescription?: string | null;
   createdAt?: string;
   updatedAt?: string;

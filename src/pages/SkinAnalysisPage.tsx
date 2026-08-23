@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/utils/routing';
 import { analyzeSkinPhoto, type SkinVisionResult } from '@/lib/skinVision';
+import { getRecommendedProducts } from '@/lib/skinRecommendation';
+import { useProducts } from '@/context/product-context';
+import { getLocalizedProduct } from '@/data/products';
 
 type AnswerMap = Record<string, string>;
 type PhotoQuality = { brightness: number; contrast: number; status: 'good' | 'dark' | 'bright' | 'flat' };
@@ -51,6 +54,7 @@ function inspectImage(file: File): Promise<{ preview: string; quality: PhotoQual
 export default function SkinAnalysisPage() {
   const { t } = useTranslation('skinCheck');
   const lang = useLanguage();
+  const { products } = useProducts();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [preview, setPreview] = useState('');
@@ -79,6 +83,18 @@ export default function SkinAnalysisPage() {
     tags.add('protect');
     return { concern, profile, tags: [...tags].slice(0, 5) };
   }, [answers, vision]);
+
+  const recommendations = useMemo(() => getRecommendedProducts({
+    skinResult: vision,
+    questionnaire: { concern: answers.concern, feel: answers.feel, sensitive: answers.sensitive === 'often' },
+    products,
+  }), [answers.concern, answers.feel, answers.sensitive, products, vision]);
+
+  const recommendationCopy = {
+    ko: { title: '내 피부에 맞는 상품', empty: '현재 등록된 상품 중 근거 있는 태그가 일치하는 상품이 없습니다. 추천 성분과 관리 방향을 참고해 주세요.', retry: '정확한 상품 추천을 위해 촬영 조건을 개선하여 다시 분석해 주세요.', reason: '추천 근거' },
+    vi: { title: 'Sản phẩm phù hợp với làn da', empty: 'Hiện chưa có sản phẩm nào có thẻ dữ liệu phù hợp. Hãy tham khảo thành phần và hướng chăm sóc được đề xuất.', retry: 'Vui lòng chụp lại trong điều kiện tốt hơn để nhận gợi ý sản phẩm đáng tin cậy.', reason: 'Lý do đề xuất' },
+    en: { title: 'Products for your skin needs', empty: 'No products currently have verified matching metadata. Use the suggested ingredients and care direction instead.', retry: 'Retake the photo in better conditions for reliable product matching.', reason: 'Why it matches' },
+  }[lang];
 
   const onPhoto = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -140,7 +156,7 @@ export default function SkinAnalysisPage() {
                     </div>
                     <input className="sr-only" type="file" accept="image/jpeg,image/png" capture="user" onChange={onPhoto} />
                   </label>
-                  {quality ? <div className={`lg:col-start-2 rounded-xl px-4 py-3 text-sm ${(quality.status === 'good' && vision?.status === 'ready') ? 'bg-emerald-50 text-emerald-800' : 'bg-amber-50 text-amber-800'}`}>{quality.status !== 'good' ? t(`photo.quality.${quality.status}`) : busy || !vision ? t('photo.vision.loading') : t(`photo.vision.${vision.status}`)}</div> : null}
+                  {quality ? <div className={`lg:col-start-2 rounded-xl px-4 py-3 text-sm ${(quality.status === 'good' && vision?.status === 'ready') ? 'bg-emerald-50 text-emerald-800' : 'bg-amber-50 text-amber-800'}`}>{quality.status !== 'good' ? t(`photo.quality.${quality.status}`) : busy || !vision ? t('photo.vision.loading') : vision.status === 'quality' ? t('photo.quality.flat') : t(`photo.vision.${vision.status}`)}</div> : null}
                 </div>
               ) : step <= questions.length ? (
                 <QuestionStep
@@ -159,6 +175,13 @@ export default function SkinAnalysisPage() {
                   </div>
                   {vision?.status === 'ready' && vision.scores ? <div className="mt-6 rounded-2xl border border-rose-100 bg-white p-5 sm:p-6"><div className="flex items-end justify-between gap-4"><div><span className="text-xs font-semibold uppercase tracking-wider text-rose-500">{t('result.visualLabel')}</span><h3 className="mt-1 text-lg font-semibold">{t('result.visualTitle')}</h3></div><span className="text-xs text-charcoal-700/45">{t('result.confidence', { value: vision.confidence })}</span></div><div className="mt-5 grid gap-4 sm:grid-cols-3">{(['redness', 'unevenTone', 'darkCircles', 'blemishes', 'texture', 'shine'] as const).map((metric) => <VisionScore key={metric} label={t(`result.metrics.${metric}`)} value={vision.scores![metric]} confidence={vision.metricConfidence?.[metric] ?? 0} confidenceLabel={t('result.confidence', { value: vision.metricConfidence?.[metric] ?? 0 })} />)}</div><p className="mt-4 text-xs leading-5 text-charcoal-700/45">{t('result.visualNotice')}</p></div> : null}
                   <div className="mt-6 rounded-2xl bg-rose-50/70 p-5"><span className="text-xs font-semibold uppercase tracking-wider text-rose-500">{t('result.tagLabel')}</span><div className="mt-3 flex flex-wrap gap-2">{result.tags.map((tag) => <span key={tag} className="rounded-full border border-rose-200 bg-white px-3 py-1.5 text-xs font-medium text-rose-700">{t(`result.tags.${tag}`)}</span>)}</div><p className="mt-3 text-xs leading-5 text-charcoal-700/50">{t('result.tagNotice')}</p></div>
+                  <div className="mt-6 rounded-2xl border border-rose-100 bg-white p-5 sm:p-6">
+                    <h3 className="text-lg font-semibold">{recommendationCopy.title}</h3>
+                    {recommendations.products.length ? <div className="mt-4 grid gap-3 sm:grid-cols-3">{recommendations.products.map(({ product, matchedNeeds, matchedIngredients }) => {
+                      const localized = getLocalizedProduct(product, lang);
+                      return <Link key={product.id} to={`/${lang}/products/${product.slug}`} className="rounded-xl border border-rose-100 p-4 transition hover:border-rose-300 hover:shadow-sm"><p className="text-sm font-semibold">{localized.name}</p><p className="mt-2 text-[11px] text-charcoal-700/50">{recommendationCopy.reason}: {[...matchedNeeds, ...matchedIngredients].join(', ')}</p></Link>;
+                    })}</div> : <p className="mt-3 text-sm leading-6 text-charcoal-700/60">{recommendations.reason === 'no_matching_products' ? recommendationCopy.empty : recommendationCopy.retry}</p>}
+                  </div>
                   <div className="mt-6 rounded-2xl bg-ivory-100 p-5 sm:p-6"><h3 className="text-lg font-semibold">{t('result.routineTitle')}</h3><div className="mt-4 grid gap-3 sm:grid-cols-3">{['cleanse', 'treat', 'protect'].map((item, index) => <div key={item} className="rounded-xl bg-white p-4"><span className="text-xs font-semibold text-rose-500">0{index + 1}</span><p className="mt-1 text-sm font-semibold">{t(`result.routine.${item}.title`)}</p><p className="mt-1 text-xs leading-5 text-charcoal-700/55">{t(`result.routine.${item}.body`)}</p></div>)}</div></div>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center"><Link to={`/${lang}/inquiry`} className="btn-primary">{t('result.consult')}<ArrowRight className="h-4 w-4" /></Link><button onClick={reset} className="btn-secondary"><RotateCcw className="h-4 w-4" />{t('result.restart')}</button></div>
                 </div>

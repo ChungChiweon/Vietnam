@@ -22,6 +22,10 @@ export interface ProductRow {
   export_available: boolean;
   recommended_countries: unknown;
   marketing_tags: unknown;
+  ingredient_tags?: unknown;
+  benefit_tags?: unknown;
+  skin_concern_tags?: unknown;
+  skin_type_tags?: unknown;
   professional_description: string | null;
   created_at: string;
   updated_at: string;
