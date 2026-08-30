@@ -6,6 +6,12 @@ alter table public.products
   add column if not exists skin_type_tags jsonb;
 
 alter table public.products
+  drop constraint if exists products_ingredient_tags_array,
+  drop constraint if exists products_benefit_tags_array,
+  drop constraint if exists products_skin_concern_tags_array,
+  drop constraint if exists products_skin_type_tags_array;
+
+alter table public.products
   add constraint products_ingredient_tags_array check (ingredient_tags is null or jsonb_typeof(ingredient_tags) = 'array'),
   add constraint products_benefit_tags_array check (benefit_tags is null or jsonb_typeof(benefit_tags) = 'array'),
   add constraint products_skin_concern_tags_array check (skin_concern_tags is null or jsonb_typeof(skin_concern_tags) = 'array'),

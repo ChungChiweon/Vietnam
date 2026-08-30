@@ -38,17 +38,22 @@ create index if not exists product_packages_active_idx on public.product_package
 alter table public.product_packages enable row level security;
 alter table public.product_package_items enable row level security;
 
+drop policy if exists "public can read active packages" on public.product_packages;
 create policy "public can read active packages" on public.product_packages
 for select to anon, authenticated using (is_active = true or public.is_admin());
+drop policy if exists "public can read active package items" on public.product_package_items;
 create policy "public can read active package items" on public.product_package_items
 for select to anon, authenticated using (
   exists (select 1 from public.product_packages package where package.id = package_id and (package.is_active = true or public.is_admin()))
 );
+drop policy if exists "admins can manage packages" on public.product_packages;
 create policy "admins can manage packages" on public.product_packages
 for all to authenticated using (public.is_admin()) with check (public.is_admin());
+drop policy if exists "admins can manage package items" on public.product_package_items;
 create policy "admins can manage package items" on public.product_package_items
 for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
+drop trigger if exists product_packages_set_updated_at on public.product_packages;
 create trigger product_packages_set_updated_at before update on public.product_packages
 for each row execute procedure public.set_updated_at();
 

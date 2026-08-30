@@ -113,12 +113,16 @@ $$;
 alter table public.profiles enable row level security;
 alter table public.business_profiles enable row level security;
 
+drop policy if exists "users can read own profile" on public.profiles;
 create policy "users can read own profile" on public.profiles
 for select to authenticated using (id = auth.uid() or public.is_admin());
+drop policy if exists "users can read own business profile" on public.business_profiles;
 create policy "users can read own business profile" on public.business_profiles
 for select to authenticated using (user_id = auth.uid() or public.is_admin());
+drop policy if exists "users can create own business profile" on public.business_profiles;
 create policy "users can create own business profile" on public.business_profiles
 for insert to authenticated with check (user_id = auth.uid() and verified = false);
+drop policy if exists "users can update own business profile" on public.business_profiles;
 create policy "users can update own business profile" on public.business_profiles
 for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid() and verified = false);
 
@@ -127,9 +131,20 @@ revoke update on public.business_profiles from authenticated;
 grant update (company_name, business_type, country, city, sns_url, phone, website, description, distribution_focus, expected_purchase_scale)
 on public.business_profiles to authenticated;
 
-drop policy if exists "authenticated admins can read orders" on public.orders;
-drop policy if exists "authenticated admins can update orders" on public.orders;
-create policy "admins can read orders" on public.orders
-for select to authenticated using (public.is_admin());
-create policy "admins can update orders" on public.orders
-for update to authenticated using (public.is_admin()) with check (public.is_admin());
+-- Orders are optional in a fresh Product Hub project. Apply admin policies only
+-- when an orders table already exists so this migration remains bootstrap-safe.
+do $$
+begin
+  if to_regclass('public.orders') is not null then
+    drop policy if exists "authenticated admins can read orders" on public.orders;
+    drop policy if exists "authenticated admins can update orders" on public.orders;
+    drop policy if exists "admins can read orders" on public.orders;
+    drop policy if exists "admins can update orders" on public.orders;
+
+    create policy "admins can read orders" on public.orders
+      for select to authenticated using (public.is_admin());
+    create policy "admins can update orders" on public.orders
+      for update to authenticated using (public.is_admin()) with check (public.is_admin());
+  end if;
+end;
+$$;

@@ -9,6 +9,13 @@ alter table public.products
   add column if not exists verified_at timestamptz;
 
 alter table public.products
+  drop constraint if exists products_inci_ingredients_array,
+  drop constraint if exists products_normalized_ingredients_array,
+  drop constraint if exists products_caution_tags_array,
+  drop constraint if exists products_derived_benefit_tags_array,
+  drop constraint if exists products_verification_status_valid;
+
+alter table public.products
   add constraint products_inci_ingredients_array check (inci_ingredients is null or jsonb_typeof(inci_ingredients) = 'array'),
   add constraint products_normalized_ingredients_array check (normalized_ingredients is null or jsonb_typeof(normalized_ingredients) = 'array'),
   add constraint products_caution_tags_array check (caution_tags is null or jsonb_typeof(caution_tags) = 'array'),

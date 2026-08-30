@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import { products } from '../src/data/products';
 
 const dryRun = process.argv.includes('--dry-run');
+const sqlOutput = process.argv.includes('--sql');
 const duplicateSlugs = products.map((product) => product.slug).filter((slug, index, all) => all.indexOf(slug) !== index);
 
 if (duplicateSlugs.length) {
@@ -31,10 +32,38 @@ if (duplicateSlugs.length) {
     export_available: product.exportAvailable ?? false,
     recommended_countries: product.recommendedCountries ?? null,
     marketing_tags: product.marketingTags ?? null,
+    ingredient_tags: product.ingredientTags ?? null,
+    benefit_tags: product.benefitTags ?? null,
+    skin_concern_tags: product.skinConcernTags ?? null,
+    skin_type_tags: product.skinTypeTags ?? null,
+    inci_ingredients: product.inciIngredients ?? null,
+    normalized_ingredients: product.normalizedIngredients ?? null,
+    caution_tags: product.cautionTags ?? null,
+    derived_benefit_tags: product.derivedBenefitTags ?? null,
+    verification_status: product.verificationStatus ?? 'unverified',
+    verification_source: product.verificationSource ?? null,
+    verified_at: product.verifiedAt ?? null,
     professional_description: product.professionalDescription ?? null,
   }));
 
-  if (dryRun) {
+  if (sqlOutput) {
+    const json = JSON.stringify(rows);
+    const columns = Object.keys(rows[0] ?? {});
+    const recordTypes: Record<string, string> = {
+      minimum_order_quantity: 'integer', price: 'numeric', is_new: 'boolean', is_best: 'boolean',
+      bulk_available: 'boolean', oem_available: 'boolean', sample_available: 'boolean', export_available: 'boolean',
+      images: 'jsonb', options: 'jsonb', business_types: 'jsonb', recommended_countries: 'jsonb',
+      marketing_tags: 'jsonb', ingredient_tags: 'jsonb', benefit_tags: 'jsonb', skin_concern_tags: 'jsonb',
+      skin_type_tags: 'jsonb', inci_ingredients: 'jsonb', normalized_ingredients: 'jsonb', caution_tags: 'jsonb',
+      derived_benefit_tags: 'jsonb', verified_at: 'timestamptz',
+    };
+    const definitions = columns.map((column) => `${column} ${recordTypes[column] ?? 'text'}`).join(', ');
+    const updates = columns.filter((column) => column !== 'slug').map((column) => `${column} = excluded.${column}`).join(', ');
+    console.log(`with source as (select * from jsonb_to_recordset($products$${json}$products$::jsonb) as x(${definitions}))\n` +
+      `insert into public.products (${columns.join(', ')}) select ${columns.join(', ')} from source\n` +
+      `on conflict (slug) do update set ${updates};\n` +
+      `select count(*) as product_count from public.products;`);
+  } else if (dryRun) {
     console.log(`[dry-run] ${rows.length} products validated. No database writes performed.`);
     console.log(JSON.stringify(rows[0] ?? {}, null, 2));
   } else {
