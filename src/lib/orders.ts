@@ -44,15 +44,14 @@ function readLocal(): OrderRecord[] {
   return demoOrders;
 }
 
-export async function createOrder(order: NewOrder): Promise<OrderRecord> {
+export async function createOrder(order: NewOrder): Promise<void> {
   if (isSupabaseConfigured && supabase) {
-    const { data, error } = await supabase.from('orders').insert(order).select().single();
+    const { error } = await supabase.from('orders').insert(order);
     if (error) throw error;
-    return data as OrderRecord;
+    return;
   }
   const record: OrderRecord = { ...order, id: crypto.randomUUID(), created_at: new Date().toISOString(), status: 'new' };
   localStorage.setItem(storageKey, JSON.stringify([record, ...readLocal()]));
-  return record;
 }
 
 export async function listOrders(): Promise<OrderRecord[]> {
@@ -72,4 +71,3 @@ export async function updateOrderStatus(id: string, status: OrderStatus): Promis
   }
   localStorage.setItem(storageKey, JSON.stringify(readLocal().map((order) => order.id === id ? { ...order, status } : order)));
 }
-
